@@ -1,13 +1,34 @@
 
-package com.nilportugues.simplewebapi.domain.model.attributes;
+package com.nilportugues.simplewebapi.network.UserApi.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Address {
 
+    @SerializedName("street")
+    @Expose
     String street;
+
+    @SerializedName("suite")
+    @Expose
     String suite;
+
+    @SerializedName("city")
+    @Expose
     String city;
+
+    @SerializedName("zipcode")
+    @Expose
     String zipcode;
+
+    @SerializedName("geo")
+    @Expose
     Geo geo;
+
+    public Address() {
+    }
 
     public Address(String street, String suite, String city, String zipcode, Geo geo) {
         this.street = street;
@@ -36,6 +57,4 @@ public class Address {
     public Geo getGeo() {
         return geo;
     }
-
-
 }

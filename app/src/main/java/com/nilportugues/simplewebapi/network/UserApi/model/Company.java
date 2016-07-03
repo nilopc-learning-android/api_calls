@@ -1,11 +1,26 @@
 
-package com.nilportugues.simplewebapi.domain.model.attributes;
+package com.nilportugues.simplewebapi.network.UserApi.model;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 
 public class Company {
 
+    @SerializedName("name")
+    @Expose
     String name;
+
+    @SerializedName("catchPhrase")
+    @Expose
     String catchPhrase;
+
+    @SerializedName("bs")
+    @Expose
     String bs;
+
+    public Company() {
+    }
 
     public Company(String name, String catchPhrase, String bs) {
         this.name = name;

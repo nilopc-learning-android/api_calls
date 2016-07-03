@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nilportugues.simplewebapi.domain.model.User;
 import com.nilportugues.simplewebapi.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.network.UserApi.model.User;
 import com.nilportugues.simplewebapi.repository.ContactRepository;
 
 

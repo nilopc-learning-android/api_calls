@@ -1,6 +1,7 @@
-package com.nilportugues.simplewebapi.network;
+package com.nilportugues.simplewebapi.network.UserApi;
 
-import com.nilportugues.simplewebapi.domain.model.User;
+
+import com.nilportugues.simplewebapi.network.UserApi.model.User;
 
 import java.util.List;
 
