@@ -11,3 +11,19 @@
 ## Dagger 2
 
 - https://github.com/codepath/android_guides/wiki/Dependency-Injection-with-Dagger-2
+  - Meter la entrada en un archivo Module... y de ahí venirse arriba haciendo: 
+    - main/
+      - domain/
+      - repository/
+      - view/
+      - MainModule.java
+    - usersearch
+      - domain/
+      - repository/
+      - view/
+      - UserSearchModule.java
+    - user
+      - domain/
+      - repository/
+      - view/
+      - UserModule.java
