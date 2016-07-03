@@ -7,28 +7,27 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import com.nilportugues.simplewebapi.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.repository.ContactRepository;
 
 
 public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
-    static final String API_KEY = "206398d0230dbb2f";
-    static final String API_URL = "https://api.fullcontact.com/v2/person.json?";
 
     private final TextView responseView;
     private final ProgressBar progressBar;
-    private final String emailText;
+    private final Email email;
+    private final ContactRepository contactRepository;
 
     private Exception exception;
 
-    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, String emailText)
+    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, Email email)
     {
+        this.email = email;
         this.responseView = responseView;
-        this.emailText = emailText;
         this.progressBar = progressBar;
+
+        this.contactRepository = new ContactRepository();
     }
 
     protected void onPreExecute() {
@@ -37,29 +36,14 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
     }
 
     protected String doInBackground(Void... urls) {
-        // Do some validation here
 
-        try {
-            URL url = new URL(API_URL + "email=" + emailText + "&apiKey=" + API_KEY);
-            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            try {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                StringBuilder stringBuilder = new StringBuilder();
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    stringBuilder.append(line).append("\n");
-                }
-                bufferedReader.close();
-                return stringBuilder.toString();
-            }
-            finally{
-                urlConnection.disconnect();
-            }
+        String result = "";
+
+        if (email.getEmail().length()>0) {
+            result = contactRepository.findByEmail(email);
         }
-        catch(Exception e) {
-            Log.e("ERROR", e.getMessage(), e);
-            return null;
-        }
+
+        return result;
     }
 
     protected void onPostExecute(String response) {
