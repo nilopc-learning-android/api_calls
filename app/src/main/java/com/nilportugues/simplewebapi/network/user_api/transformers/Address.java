@@ -1,5 +1,5 @@
 
-package com.nilportugues.simplewebapi.network.UserApi.model;
+package com.nilportugues.simplewebapi.network.user_api.transformers;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
