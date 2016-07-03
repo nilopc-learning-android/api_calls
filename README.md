@@ -1,7 +1,10 @@
 # api_calls
 
-## Retrofit cache... because it makes sense. Rx Observables?!
+## Retrofit
 
+- To generate POJOs: http://www.jsonschema2pojo.org/
+
+### Missing
 - http://stackoverflow.com/questions/23429046/can-retrofit-with-okhttp-use-cache-data-when-offline
 - https://github.com/digitalbuddha/StoreDemo
 
