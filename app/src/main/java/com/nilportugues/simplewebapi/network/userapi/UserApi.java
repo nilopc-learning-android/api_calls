@@ -1,7 +1,7 @@
-package com.nilportugues.simplewebapi.network.user_api;
+package com.nilportugues.simplewebapi.network.userapi;
 
 
-import com.nilportugues.simplewebapi.network.user_api.transformers.User;
+import com.nilportugues.simplewebapi.network.userapi.transformers.User;
 
 import java.util.List;
 

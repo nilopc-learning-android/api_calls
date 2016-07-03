@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         queryButton = (Button) findViewById(R.id.queryButton);
 
 
-        Log.i("EMAIL",emailText.getText().toString());
+        Log.i("EMAIL", emailText.getText().toString());
 
         queryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private Email emailFromEditText(EditText emailText)
-    {
+    private Email emailFromEditText(EditText emailText) {
         Email email = new Email();
 
-        if(0 != emailText.getText().length()) {
+        if (0 != emailText.getText().length()) {
             email = new Email(emailText.getText().toString());
         }
 

@@ -1,5 +1,4 @@
-
-package com.nilportugues.simplewebapi.network.user_api.transformers;
+package com.nilportugues.simplewebapi.network.userapi.transformers;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -55,11 +54,19 @@ public class User {
         return email;
     }
 
-    public Address getAddress() { return address;  }
+    public Address getAddress() {
+        return address;
+    }
 
-    public String getPhone() { return phone; }
+    public String getPhone() {
+        return phone;
+    }
 
-    public String getWebsite() { return website; }
+    public String getWebsite() {
+        return website;
+    }
 
-    public Company getCompany() { return company; }
+    public Company getCompany() {
+        return company;
+    }
 }

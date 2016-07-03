@@ -3,9 +3,9 @@ package com.nilportugues.simplewebapi.repository;
 import android.util.Log;
 
 import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.network.user_api.UserApi;
-import com.nilportugues.simplewebapi.network.user_api.UserApiClient;
-import com.nilportugues.simplewebapi.network.user_api.transformers.User;
+import com.nilportugues.simplewebapi.network.userapi.UserApi;
+import com.nilportugues.simplewebapi.network.userapi.UserApiClient;
+import com.nilportugues.simplewebapi.network.userapi.transformers.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,8 +20,7 @@ public class ContactRepository {
         apiClient = UserApiClient.getInstance();
     }
 
-    public User findByEmail(Email email)
-    {
+    public User findByEmail(Email email) {
         Call<List<User>> call = apiClient.findByEmail(email.getEmail());
         User user = new User();
 

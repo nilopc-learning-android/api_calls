@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.network.user_api;
+package com.nilportugues.simplewebapi.network.userapi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -7,9 +7,10 @@ public class UserApiClient {
 
     private static UserApi instance;
 
-    private UserApiClient(){}
+    private UserApiClient() {
+    }
 
-    public static UserApi getInstance(){
+    public static UserApi getInstance() {
         if (instance == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(UserApi.API_URL)

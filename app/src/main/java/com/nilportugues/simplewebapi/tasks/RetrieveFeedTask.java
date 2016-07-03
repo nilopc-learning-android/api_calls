@@ -7,7 +7,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.network.user_api.transformers.User;
+import com.nilportugues.simplewebapi.network.userapi.transformers.User;
 import com.nilportugues.simplewebapi.repository.ContactRepository;
 
 
@@ -19,8 +19,7 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, User> {
     private final Email email;
     private final ContactRepository contactRepository;
 
-    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, Email email)
-    {
+    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, Email email) {
         this.email = email;
         this.responseView = responseView;
         this.progressBar = progressBar;
@@ -41,8 +40,8 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, User> {
 
         progressBar.setVisibility(View.GONE);
         responseView.setText(
-                "user: " + user.getName() +"\n" +
-                "email: " + user.getEmail()
+                "user: " + user.getName() + "\n" +
+                        "email: " + user.getEmail()
         );
     }
 }
