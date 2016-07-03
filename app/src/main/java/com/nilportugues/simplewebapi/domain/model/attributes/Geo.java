@@ -1,14 +1,15 @@
 
 package com.nilportugues.simplewebapi.domain.model.attributes;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Geo {
 
-    private String lat;
-    private String lng;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    String lat;
+    String lng;
+
+    public Geo(String lat, String lng) {
+        this.lat = lat;
+        this.lng = lng;
+    }
 
     public String getLat() {
         return lat;
@@ -16,9 +17,5 @@ public class Geo {
 
     public String getLng() {
         return lng;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
     }
 }

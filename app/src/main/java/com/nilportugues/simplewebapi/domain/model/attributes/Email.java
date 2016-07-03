@@ -2,7 +2,7 @@ package com.nilportugues.simplewebapi.domain.model.attributes;
 
 public class Email {
 
-    private final String email;
+    String email;
 
     public Email() {
         this.email = "";

@@ -1,15 +1,17 @@
 
 package com.nilportugues.simplewebapi.domain.model.attributes;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Company {
 
-    private String name;
-    private String catchPhrase;
-    private String bs;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    String name;
+    String catchPhrase;
+    String bs;
+
+    public Company(String name, String catchPhrase, String bs) {
+        this.name = name;
+        this.catchPhrase = catchPhrase;
+        this.bs = bs;
+    }
 
     public String getName() {
         return name;
@@ -21,13 +23,5 @@ public class Company {
 
     public String getBs() {
         return bs;
-    }
-
-    public void setBs(String bs) {
-        this.bs = bs;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
     }
 }
