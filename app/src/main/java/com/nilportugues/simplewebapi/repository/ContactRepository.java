@@ -12,8 +12,7 @@ import java.net.URL;
 
 public class ContactRepository {
 
-    static final String API_KEY = "206398d0230dbb2f";
-    static final String API_URL = "https://api.fullcontact.com/v2/person.json?";
+    static final String API_URL = "http://jsonplaceholder.typicode.com/users";
 
 
     public String findByEmail(Email email)
@@ -23,7 +22,7 @@ public class ContactRepository {
         }
 
         try {
-            URL url = new URL(API_URL + "email=" + email.getEmail() + "&apiKey=" + API_KEY);
+            URL url = new URL(API_URL + "?email=" + email.getEmail());
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             try {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
