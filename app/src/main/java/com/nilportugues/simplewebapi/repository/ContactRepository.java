@@ -5,33 +5,24 @@ import android.util.Log;
 import com.nilportugues.simplewebapi.domain.model.User;
 import com.nilportugues.simplewebapi.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.network.UserApi;
+import com.nilportugues.simplewebapi.network.UserApiClient;
 
 import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ContactRepository {
 
-    static final String API_URL = "http://jsonplaceholder.typicode.com/";
+    private UserApi apiClient;
 
-    private UserApi api;
-
-    public ContactRepository()
-    {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(API_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        api = retrofit.create(UserApi.class);
+    public ContactRepository() {
+        apiClient = UserApiClient.getInstance();
     }
 
     public User findByEmail(Email email)
     {
-        Call<List<User>> call = api.findByEmail(email.getEmail());
+        Call<List<User>> call = apiClient.findByEmail(email.getEmail());
         User user = new User();
 
         try {
