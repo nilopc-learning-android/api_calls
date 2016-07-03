@@ -33,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
             queryButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    RetrieveFeedTask retrieveFeedTask = new RetrieveFeedTask(responseView, emailText, progressBar);
+
+                    RetrieveFeedTask retrieveFeedTask = new RetrieveFeedTask(
+                            responseView,
+                            progressBar,
+                            emailText.getText().toString()
+                    );
+
                     retrieveFeedTask.execute();
                 }
             });

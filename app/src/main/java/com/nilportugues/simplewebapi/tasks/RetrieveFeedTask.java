@@ -4,7 +4,6 @@ package com.nilportugues.simplewebapi.tasks;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -20,12 +19,12 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
     static final String API_URL = "https://api.fullcontact.com/v2/person.json?";
 
     private final TextView responseView;
-    private final EditText emailText;
     private final ProgressBar progressBar;
+    private final String emailText;
 
     private Exception exception;
 
-    public RetrieveFeedTask(TextView responseView, EditText emailText, ProgressBar progressBar)
+    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, String emailText)
     {
         this.responseView = responseView;
         this.emailText = emailText;
@@ -38,11 +37,10 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
     }
 
     protected String doInBackground(Void... urls) {
-        String email = emailText.getText().toString();
         // Do some validation here
 
         try {
-            URL url = new URL(API_URL + "email=" + email + "&apiKey=" + API_KEY);
+            URL url = new URL(API_URL + "email=" + emailText + "&apiKey=" + API_KEY);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             try {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
