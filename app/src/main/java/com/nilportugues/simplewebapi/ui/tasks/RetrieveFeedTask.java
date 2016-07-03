@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.tasks;
+package com.nilportugues.simplewebapi.ui.tasks;
 
 
 import android.os.AsyncTask;

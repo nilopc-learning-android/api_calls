@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.tasks.RetrieveFeedTask;
+import com.nilportugues.simplewebapi.ui.tasks.RetrieveFeedTask;
 
 
 public class MainActivity extends AppCompatActivity {
