@@ -17,7 +17,7 @@ public class ContactRepository {
     private UserApi apiClient;
 
     public ContactRepository() {
-        apiClient = UserApiClient.getInstance();
+        apiClient =  UserApiClient.getInstance();
     }
 
     public User findByEmail(Email email) {
