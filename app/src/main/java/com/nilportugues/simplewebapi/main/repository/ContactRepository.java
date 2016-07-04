@@ -35,4 +35,18 @@ public class ContactRepository {
 
         return user;
     }
+
+    public List<User> findAll()
+    {
+        Call<List<User>> call = apiClient.getUsers();
+        List<User> userList = null;
+
+        try {
+            userList = call.execute().body();
+        } catch (IOException e) {
+            Log.e("URL", call.request().url().toString());
+        }
+
+        return userList;
+    }
 }

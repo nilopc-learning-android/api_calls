@@ -7,24 +7,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.main.domain.usecase.FindUser;
 import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
-import com.nilportugues.simplewebapi.main.repository.ContactRepository;
 
 
-public class RetrieveFeedTask extends AsyncTask<Void, Void, User> {
+public class FetchUserProfile extends AsyncTask<Void, Void, User> {
 
+    private TextView responseView;
+    private ProgressBar progressBar;
+    private Email email;
+    private FindUser getUserDetails;
 
-    private final TextView responseView;
-    private final ProgressBar progressBar;
-    private final Email email;
-    private final ContactRepository contactRepository;
-
-    public RetrieveFeedTask(TextView responseView, ProgressBar progressBar, Email email) {
+    public FetchUserProfile(TextView responseView, ProgressBar progressBar, Email email, FindUser getUserDetails) {
         this.email = email;
         this.responseView = responseView;
         this.progressBar = progressBar;
-
-        this.contactRepository = new ContactRepository();
+        this.getUserDetails = getUserDetails;
     }
 
     protected void onPreExecute() {
@@ -33,7 +31,7 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, User> {
     }
 
     protected User doInBackground(Void... urls) {
-        return contactRepository.findByEmail(email);
+        return getUserDetails.byEmail(email);
     }
 
     protected void onPostExecute(User user) {
