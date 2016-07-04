@@ -28,3 +28,43 @@
       - repository/
       - view/
       - UserModule.java
+
+
+Dagger2, how it works: 
+
+- Create a @Module that contains methods tagged with @Provides in it.     
+- Use @Provides to create a method that returns the object.
+- Use @Inject in the place where you want to use this. This requires:
+    - Creating an public interface xxComponent that contains all the places where you will @Inject this object.
+
+```java
+//MyAppComponent.java
+
+@Component(
+    modules = {
+        MyAppModule.class //This component works will Module to build the class I need.
+    }
+)
+public interface MyAppComponent{
+    void inject(MyActivity myActivity);
+}
+```
+
+
+```java
+//MyAppModule.java
+
+@Module
+public class MyAppModule{
+    private final MyApp app;
+    
+    public MyAppModule(MyApp app) {
+        this.app = app;
+    }
+    
+    @Provides
+    MyApp provideMyApp() {
+        return app;
+    }
+}
+```
