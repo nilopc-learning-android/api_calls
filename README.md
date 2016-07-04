@@ -40,13 +40,16 @@ Dagger2, how it works:
 ```java
 //MyAppComponent.java
 
+@Singleton
 @Component(
     modules = {
-        MyAppModule.class //This component works will Module to build the class I need.
+        MyAppModule.class, //1) THIS IS LINKED WITH 2
+        DataModule.class,
+        NetworkModule.class
     }
 )
 public interface MyAppComponent{
-    void inject(MyActivity myActivity);
+    void inject(MyApp myApp);
 }
 ```
 
@@ -65,6 +68,50 @@ public class MyAppModule{
     @Provides
     MyApp provideMyApp() {
         return app;
+    }
+}
+```
+
+```java
+public class MyApp extends Application
+{
+    private MyComponent component;
+    
+    @Override public void onCreate {
+        component = DaggerMyAppComponent
+            .builder()
+            .myAppModule(new MyAppModule(this))  //2) THIS IS LINKED WITH 1
+            .dataModule(new DataModule(this))
+            .networkModule(new NetworkModule(this))
+            .build();
+    }
+    
+    /**
+     * This method provides access to all the dependencies.
+     */
+    public MyComponent getComponent()
+    {
+        //...
+    }
+}
+```
+
+---
+
+
+```java
+@Module
+public class NetworkModule
+{
+    @Provides
+    @Singleton
+    Retrofit provideUserApi(@Named("userApiUrl") string baseUrl) {
+        return ...
+    }
+    
+    @Provides
+    String providesUserApiUrl() {
+        return "https://google.com";
     }
 }
 ```
