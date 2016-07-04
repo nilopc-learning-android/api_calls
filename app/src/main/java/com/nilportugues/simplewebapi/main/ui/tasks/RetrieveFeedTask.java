@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.ui.tasks;
+package com.nilportugues.simplewebapi.main.ui.tasks;
 
 
 import android.os.AsyncTask;
@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.network.userapi.transformers.User;
-import com.nilportugues.simplewebapi.repository.ContactRepository;
+import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.ContactRepository;
 
 
 public class RetrieveFeedTask extends AsyncTask<Void, Void, User> {

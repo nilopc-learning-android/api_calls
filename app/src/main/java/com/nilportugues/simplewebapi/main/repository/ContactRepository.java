@@ -1,11 +1,11 @@
-package com.nilportugues.simplewebapi.repository;
+package com.nilportugues.simplewebapi.main.repository;
 
 import android.util.Log;
 
-import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.network.userapi.UserApi;
-import com.nilportugues.simplewebapi.network.userapi.UserApiClient;
-import com.nilportugues.simplewebapi.network.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.main.repository.datasource.userapi.UserApi;
+import com.nilportugues.simplewebapi.main.repository.datasource.userapi.UserApiClient;
+import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
 
 import java.io.IOException;
 import java.util.List;

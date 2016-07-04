@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.ui.activities;
+package com.nilportugues.simplewebapi.main.ui.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +10,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.ui.tasks.RetrieveFeedTask;
+import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.main.ui.tasks.RetrieveFeedTask;
 
 
 public class MainActivity extends AppCompatActivity {
