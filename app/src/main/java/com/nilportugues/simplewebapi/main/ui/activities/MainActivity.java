@@ -21,27 +21,30 @@ public class MainActivity extends BaseActivity {
     private TextView responseView;
     private ProgressBar progressBar;
     private EditText emailText;
+    private Button queryButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getComponent().inject(this);
-
-
-        emailText = (EditText) findViewById(R.id.emailText);
-        responseView = (TextView) findViewById(R.id.responseView);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        Button queryButton = (Button) findViewById(R.id.queryButton);
-
-        loadUserAsyncTask(queryButton);
+        getViewData();
+        loadUserAsyncTask();
     }
 
-    @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
 
-    private void loadUserAsyncTask(Button queryButton) {
+    protected void getViewData()
+    {
+        emailText = (EditText) findViewById(R.id.emailText);
+        responseView = (TextView) findViewById(R.id.responseView);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        queryButton = (Button) findViewById(R.id.queryButton);
+    }
+
+    private void loadUserAsyncTask() {
         if (queryButton != null) {
             queryButton.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.nilportugues.simplewebapi.MyApplication;
-import com.nilportugues.simplewebapi.main.MainComponent;
+import com.nilportugues.simplewebapi.main.di.components.MainComponent;
 
 
 public abstract class BaseActivity extends Activity
@@ -15,10 +15,11 @@ public abstract class BaseActivity extends Activity
         setContentView(getLayoutId());
     }
 
-    public MainComponent getComponent()
-    {
+    public MainComponent getComponent() {
         return ((MyApplication) getApplication()).getMainComponent();
     }
 
     abstract protected int getLayoutId();
+
+    abstract protected void getViewData();
 }

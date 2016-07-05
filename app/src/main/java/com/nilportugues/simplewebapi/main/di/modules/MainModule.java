@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main;
+package com.nilportugues.simplewebapi.main.di.modules;
 
 
 import android.app.Application;
