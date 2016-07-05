@@ -14,21 +14,21 @@ import com.nilportugues.simplewebapi.users.ui.tasks.FetchUserProfile;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+
 public class UserSearchActivity extends BaseActivity {
 
     @Inject FindUser getUserDetails;
 
-    private TextView responseView;
-    private ProgressBar progressBar;
-    private EditText emailText;
-    private Button queryButton;
-
+    @BindView(R.id.responseView) TextView responseView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.emailText) EditText emailText;
+    @BindView(R.id.queryButton) Button queryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getComponent().inject(this);
-        getViewData();
         loadUserAsyncTask();
     }
 
@@ -36,13 +36,6 @@ public class UserSearchActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-    protected void getViewData()
-    {
-        emailText = (EditText) findViewById(R.id.emailText);
-        responseView = (TextView) findViewById(R.id.responseView);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        queryButton = (Button) findViewById(R.id.queryButton);
-    }
 
     private void loadUserAsyncTask() {
         if (queryButton != null) {
