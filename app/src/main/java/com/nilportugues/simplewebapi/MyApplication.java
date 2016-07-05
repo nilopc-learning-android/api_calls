@@ -15,7 +15,8 @@ public class MyApplication extends Application
     public void onCreate() {
         super.onCreate();
 
-        mMainComponent = DaggerMainComponent.builder()
+        mMainComponent = DaggerMainComponent
+                .builder()
                 .mainModule(new MainModule(this))
                 .build();
     }
