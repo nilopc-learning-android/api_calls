@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.main.domain.usecase.FindUser;
-import com.nilportugues.simplewebapi.main.repository.user.model.User;
+import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.users.domain.usecase.FindUser;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 
 public class FetchUserProfile extends AsyncTask<Void, Void, User> {

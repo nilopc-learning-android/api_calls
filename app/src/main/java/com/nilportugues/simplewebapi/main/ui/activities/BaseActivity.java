@@ -1,25 +1,15 @@
 package com.nilportugues.simplewebapi.main.ui.activities;
 
-import android.app.Activity;
-import android.os.Bundle;
-
 import com.nilportugues.simplewebapi.MyApplication;
-import com.nilportugues.simplewebapi.main.di.components.MainComponent;
+import com.nilportugues.simplewebapi.shared.ui.activities.SharedBaseActivity;
+import com.nilportugues.simplewebapi.users.di.components.UserComponent;
 
 
-public abstract class BaseActivity extends Activity
+public abstract class BaseActivity extends SharedBaseActivity
 {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+
+    public UserComponent getComponent() {
+        return ((MyApplication) getApplication()).getUserComponent();
     }
 
-    public MainComponent getComponent() {
-        return ((MyApplication) getApplication()).getMainComponent();
-    }
-
-    abstract protected int getLayoutId();
-
-    abstract protected void getViewData();
 }

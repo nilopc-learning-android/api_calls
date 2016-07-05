@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.domain.model.attributes;
+package com.nilportugues.simplewebapi.users.domain.model.attributes;
 
 public class Email {
 

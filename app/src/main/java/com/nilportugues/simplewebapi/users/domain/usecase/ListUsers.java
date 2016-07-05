@@ -1,7 +1,7 @@
-package com.nilportugues.simplewebapi.main.domain.usecase;
+package com.nilportugues.simplewebapi.users.domain.usecase;
 
-import com.nilportugues.simplewebapi.main.repository.user.UserRepository;
-import com.nilportugues.simplewebapi.main.repository.user.model.User;
+import com.nilportugues.simplewebapi.users.repository.UserRepository;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.util.List;
 

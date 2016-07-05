@@ -1,7 +1,7 @@
-package com.nilportugues.simplewebapi.main.repository.user.api;
+package com.nilportugues.simplewebapi.users.repository.api;
 
 
-import com.nilportugues.simplewebapi.main.repository.user.model.User;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.util.List;
 

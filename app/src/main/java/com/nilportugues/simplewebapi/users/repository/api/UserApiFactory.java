@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.repository.user.api;
+package com.nilportugues.simplewebapi.users.repository.api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
