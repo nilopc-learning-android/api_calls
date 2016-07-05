@@ -11,7 +11,7 @@
 
     <EditText
         android:id="@+id/emailText"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Enter email address"
         android:inputType="textEmailAddress"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:text="Search" />
+        android:text="@string/search" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,7 +40,10 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="false"
+            android:id="@+id/results"
+            android:background="#dddddd">
 
             <TextView
                 android:id="@+id/responseView"

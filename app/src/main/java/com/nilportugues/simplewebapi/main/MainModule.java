@@ -1,9 +1,12 @@
 package com.nilportugues.simplewebapi.main;
 
 
+import android.app.Application;
+
 import com.nilportugues.simplewebapi.main.domain.usecase.FindUser;
 import com.nilportugues.simplewebapi.main.domain.usecase.ListUsers;
 import com.nilportugues.simplewebapi.main.repository.user.UserRepository;
+import com.nilportugues.simplewebapi.main.repository.user.api.UserApiFactory;
 
 import javax.inject.Singleton;
 
@@ -12,6 +15,13 @@ import dagger.Provides;
 
 @Module
 public class MainModule {
+
+    Application mApplication;
+
+    public MainModule(Application application) {
+        mApplication = application;
+    }
+
     @Provides
     @Singleton
     FindUser providesFindUser(UserRepository userRepository) {
@@ -26,8 +36,19 @@ public class MainModule {
 
     @Provides
     @Singleton
-    UserRepository provideContactRepository() {
-        return new UserRepository();
+    UserRepository provideUserRepository(UserApiFactory apiFactory) {
+        return new UserRepository(apiFactory);
     }
 
+    @Provides
+    @Singleton
+    UserApiFactory providesUserApiFactory(String baseUrl) {
+        return new UserApiFactory(baseUrl);
+    }
+
+    @Provides
+    @Singleton
+    String providesUserApiBaseUrl() {
+        return "http://jsonplaceholder.typicode.com/";
+    }
 }

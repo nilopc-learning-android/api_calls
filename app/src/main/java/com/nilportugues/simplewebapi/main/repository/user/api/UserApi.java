@@ -12,8 +12,6 @@ import retrofit2.http.Query;
 
 public interface UserApi {
 
-    String API_URL = "http://jsonplaceholder.typicode.com/";
-
     @GET("users")
     Call<List<User>> getUsers();
 

@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.main.repository.user.api.UserApi;
-import com.nilportugues.simplewebapi.main.repository.user.api.UserApiClient;
+import com.nilportugues.simplewebapi.main.repository.user.api.UserApiFactory;
 import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 import java.io.IOException;
@@ -14,10 +14,10 @@ import retrofit2.Call;
 
 public class UserRepository implements com.nilportugues.simplewebapi.main.domain.model.UserRepository{
 
-    private UserApi apiClient;
+    UserApi apiClient;
 
-    public UserRepository() {
-        apiClient =  UserApiClient.getInstance();
+    public UserRepository(UserApiFactory apiClient) {
+        this.apiClient = apiClient.create();
     }
 
     public User findByEmail(Email email) {
