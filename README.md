@@ -1,8 +1,3 @@
-## TODO
-
-- Implement Repository Drivers
-- Inject Api to Repository
-
 ## Recomendaciones Imanol
 
 - Drop AsyncTask por Rx
