@@ -2,6 +2,7 @@ package com.nilportugues.simplewebapi;
 
 import android.app.Application;
 
+import com.nilportugues.simplewebapi.main.di.components.DaggerMainComponent;
 import com.nilportugues.simplewebapi.main.di.components.MainComponent;
 import com.nilportugues.simplewebapi.users.di.components.DaggerUserComponent;
 import com.nilportugues.simplewebapi.users.di.components.UserComponent;
@@ -15,7 +16,7 @@ public class MyApplication extends Application
     @Override
     public void onCreate() {
         super.onCreate();
-        //mMainComponent = DaggerMainComponent.builder().build();
+        mMainComponent = DaggerMainComponent.builder().build();
         mUserComponent = DaggerUserComponent.builder().build();
     }
 
