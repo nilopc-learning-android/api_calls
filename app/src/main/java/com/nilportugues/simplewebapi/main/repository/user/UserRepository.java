@@ -1,22 +1,22 @@
-package com.nilportugues.simplewebapi.main.repository;
+package com.nilportugues.simplewebapi.main.repository.user;
 
 import android.util.Log;
 
 import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.UserApi;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.UserApiClient;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.user.api.UserApi;
+import com.nilportugues.simplewebapi.main.repository.user.api.UserApiClient;
+import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
 
-public class ContactRepository {
+public class UserRepository {
 
     private UserApi apiClient;
 
-    public ContactRepository() {
+    public UserRepository() {
         apiClient =  UserApiClient.getInstance();
     }
 

@@ -1,12 +1,7 @@
 package com.nilportugues.simplewebapi.main.domain.model.attributes;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
 public class UserId {
 
-    @SerializedName("lat")
-    @Expose
     String id;
 
     public UserId(String id) {

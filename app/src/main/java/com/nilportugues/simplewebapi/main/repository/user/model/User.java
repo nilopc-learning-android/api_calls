@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers;
+package com.nilportugues.simplewebapi.main.repository.user.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

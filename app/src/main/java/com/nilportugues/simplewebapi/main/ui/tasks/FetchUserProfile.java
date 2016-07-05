@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.main.domain.usecase.FindUser;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 
 public class FetchUserProfile extends AsyncTask<Void, Void, User> {

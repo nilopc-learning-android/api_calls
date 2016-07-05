@@ -1,7 +1,7 @@
-package com.nilportugues.simplewebapi.main.repository.datasource.userapi;
+package com.nilportugues.simplewebapi.main.repository.user.api;
 
 
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 import java.util.List;
 

@@ -1,18 +1,18 @@
 package com.nilportugues.simplewebapi.main.domain.usecase;
 
 import com.nilportugues.simplewebapi.main.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.main.repository.ContactRepository;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.user.UserRepository;
+import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 public class FindUser {
 
-    private ContactRepository contactRepository;
+    private UserRepository userRepository;
 
-    public FindUser(ContactRepository contactRepository) {
-        this.contactRepository = contactRepository;
+    public FindUser(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public User byEmail(Email email) {
-        return contactRepository.findByEmail(email);
+        return userRepository.findByEmail(email);
     }
 }

@@ -1,18 +1,18 @@
 package com.nilportugues.simplewebapi.main.domain.usecase;
 
-import com.nilportugues.simplewebapi.main.repository.ContactRepository;
-import com.nilportugues.simplewebapi.main.repository.datasource.userapi.transformers.User;
+import com.nilportugues.simplewebapi.main.repository.user.UserRepository;
+import com.nilportugues.simplewebapi.main.repository.user.model.User;
 
 import java.util.List;
 
 public class ListUsers {
-    private ContactRepository contactRepository;
+    private UserRepository userRepository;
 
-    public ListUsers(ContactRepository contactRepository) {
-        this.contactRepository = contactRepository;
+    public ListUsers(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     public List<User> list() {
-        return contactRepository.findAll();
+        return userRepository.findAll();
     }
 }
