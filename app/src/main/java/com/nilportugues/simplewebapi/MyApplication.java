@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.nilportugues.simplewebapi.main.di.components.DaggerMainComponent;
 import com.nilportugues.simplewebapi.main.di.components.MainComponent;
-import com.nilportugues.simplewebapi.main.di.modules.MainModule;
 
 
 public class MyApplication extends Application
@@ -14,11 +13,7 @@ public class MyApplication extends Application
     @Override
     public void onCreate() {
         super.onCreate();
-
-        mMainComponent = DaggerMainComponent
-                .builder()
-                .mainModule(new MainModule(this))
-                .build();
+        mMainComponent = DaggerMainComponent.builder().build();
     }
 
     public MainComponent getMainComponent() {
