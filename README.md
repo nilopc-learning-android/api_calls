@@ -3,6 +3,11 @@
 - Implement Repository Drivers
 - Inject Api to Repository
 
+## Recomendaciones Imanol
+
+- Drop AsyncTask por Rx
+- https://github.com/nilopc-learning-android/EffectiveAndroidUI 
+
 ----
 
 # api_calls
