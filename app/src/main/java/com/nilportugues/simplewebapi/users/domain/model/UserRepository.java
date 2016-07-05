@@ -5,8 +5,7 @@ import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.util.List;
 
-public interface UserRepository
-{
+public interface UserRepository {
     User findByEmail(Email email);
 
     List<User> findAll();

@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.repository.api;
+package com.nilportugues.simplewebapi.users.network.api;
 
 
 import com.nilportugues.simplewebapi.users.repository.model.User;

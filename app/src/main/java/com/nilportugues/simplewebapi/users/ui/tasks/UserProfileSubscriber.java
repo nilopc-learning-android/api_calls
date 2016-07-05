@@ -7,8 +7,7 @@ import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import rx.Subscriber;
 
-public class UserProfileSubscriber extends Subscriber
-{
+public class UserProfileSubscriber extends Subscriber {
     private FindUser getUserDetails;
     private User user;
 

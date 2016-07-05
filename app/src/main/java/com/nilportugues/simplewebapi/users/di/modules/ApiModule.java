@@ -1,12 +1,12 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
-import com.nilportugues.simplewebapi.users.repository.api.UserApiFactory;
+import com.nilportugues.simplewebapi.users.network.api.UserApiFactory;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-import dagger.Provides;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
 public class ApiModule {

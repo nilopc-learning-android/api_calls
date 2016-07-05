@@ -19,11 +19,25 @@ import rx.Subscriber;
 
 public class UserSearchActivity extends BaseActivity {
 
-    @Inject FindUser getUserDetails;
-    @BindView(R.id.responseView) TextView responseView;
-    @BindView(R.id.progressBar) ProgressBar progressBar;
-    @BindView(R.id.emailText) EditText emailText;
-    @BindView(R.id.queryButton) Button queryButton;
+    final Observable<String> operationObservable = Observable.create(new Observable.OnSubscribe<String>() {
+
+        @Override
+        public void call(Subscriber subscriber) {
+            subscriber.onNext(doInBackgroundOperation());
+            subscriber.onCompleted();
+        }
+
+    });
+    @Inject
+    FindUser getUserDetails;
+    @BindView(R.id.responseView)
+    TextView responseView;
+    @BindView(R.id.progressBar)
+    ProgressBar progressBar;
+    @BindView(R.id.emailText)
+    EditText emailText;
+    @BindView(R.id.queryButton)
+    Button queryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +50,11 @@ public class UserSearchActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-
-
-    final Observable<String> operationObservable = Observable.create(new Observable.OnSubscribe<String>() {
-
-        @Override
-        public void call(Subscriber subscriber) {
-            subscriber.onNext(doInBackgroundOperation());
-            subscriber.onCompleted();
-        }
-
-    });
-
-
     private void loadUserAsyncTask() {
         if (queryButton != null) {
 
 
-
             queryButton.setOnClickListener(new View.OnClickListener() {
-
-
-
                 @Override
                 public void onClick(final View v) {
 

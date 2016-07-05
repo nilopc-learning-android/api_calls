@@ -1,7 +1,7 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
+import com.nilportugues.simplewebapi.users.network.api.UserApiFactory;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
-import com.nilportugues.simplewebapi.users.repository.api.UserApiFactory;
 
 import javax.inject.Singleton;
 

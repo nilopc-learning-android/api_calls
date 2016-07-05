@@ -39,11 +39,11 @@
             android:visibility="gone" />
 
         <ScrollView
+            android:id="@+id/results"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fillViewport="false"
-            android:id="@+id/results"
-            android:background="#dddddd">
+            android:background="#dddddd"
+            android:fillViewport="false">
 
             <TextView
                 android:id="@+id/responseView"

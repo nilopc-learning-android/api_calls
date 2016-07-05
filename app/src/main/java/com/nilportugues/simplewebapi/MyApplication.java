@@ -8,8 +8,7 @@ import com.nilportugues.simplewebapi.users.di.components.DaggerUserComponent;
 import com.nilportugues.simplewebapi.users.di.components.UserComponent;
 
 
-public class MyApplication extends Application
-{
+public class MyApplication extends Application {
     private MainComponent mMainComponent;
     private UserComponent mUserComponent;
 

@@ -3,8 +3,8 @@ package com.nilportugues.simplewebapi.users.repository;
 import android.util.Log;
 
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.repository.api.UserApi;
-import com.nilportugues.simplewebapi.users.repository.api.UserApiFactory;
+import com.nilportugues.simplewebapi.users.network.api.UserApi;
+import com.nilportugues.simplewebapi.users.network.api.UserApiFactory;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.util.List;
 
 import retrofit2.Call;
 
-public class UserRepository implements com.nilportugues.simplewebapi.users.domain.model.UserRepository{
+public class UserRepository implements com.nilportugues.simplewebapi.users.domain.model.UserRepository {
 
     UserApi apiClient;
 
@@ -36,8 +36,7 @@ public class UserRepository implements com.nilportugues.simplewebapi.users.domai
         return user;
     }
 
-    public List<User> findAll()
-    {
+    public List<User> findAll() {
         Call<List<User>> call = apiClient.getUsers();
         List<User> userList = null;
 
