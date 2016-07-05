@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.users.domain.usecase.FindUser;
+import com.nilportugues.simplewebapi.users.ui.rx.SearchByEmailSubscriber;
 
 import javax.inject.Inject;
 
@@ -19,15 +20,7 @@ import rx.Subscriber;
 
 public class UserSearchActivity extends BaseActivity {
 
-    final Observable<String> operationObservable = Observable.create(new Observable.OnSubscribe<String>() {
 
-        @Override
-        public void call(Subscriber subscriber) {
-            subscriber.onNext(doInBackgroundOperation());
-            subscriber.onCompleted();
-        }
-
-    });
     @Inject
     FindUser getUserDetails;
     @BindView(R.id.responseView)
@@ -38,6 +31,8 @@ public class UserSearchActivity extends BaseActivity {
     EditText emailText;
     @BindView(R.id.queryButton)
     Button queryButton;
+
+    Email email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,61 +45,43 @@ public class UserSearchActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+
+
     private void loadUserAsyncTask() {
         if (queryButton != null) {
 
+            email = emailFromEditText(emailText);
+
+            final Observable<Email> operationObservable = Observable.create(new Observable.OnSubscribe<Email>() {
+
+                @Override
+                public void call(Subscriber subscriber) {
+                    subscriber.onNext(email);
+                    subscriber.onCompleted();
+                }
+
+            });
 
             queryButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
 
-                    operationObservable.subscribe(new Subscriber<String>() {
-                        @Override
-                        public void onCompleted() {
-                            progressBar.setVisibility(View.GONE);
-                            responseView.setText("OK");
-                        }
+                    progressBar.setVisibility(View.VISIBLE);
+                    responseView.setText("");
 
-                        @Override
-                        public void onError(Throwable e) {
-                            responseView.setText("FAIL");
-                        }
-
-                        @Override
-                        public void onNext(String string) {
-                            progressBar.setVisibility(View.VISIBLE);
-                            responseView.setText("");
-                        }
-                    });
-
-
-
-
-                    /*FetchUserProfile fetchUserProfile = new FetchUserProfile(
-                            responseView,
+                    SearchByEmailSubscriber subscriber = new SearchByEmailSubscriber(
                             progressBar,
-                            emailFromEditText(emailText),
+                            responseView,
                             getUserDetails
                     );
 
-                    fetchUserProfile.execute();
-                    */
-                    /*UserProfileSubscriber subscriber = new UserProfileSubscriber(
-                            responseView,
-                            progressBar,
-                            emailFromEditText(emailText),
-                            getUserDetails
-                    ).onNext();
-                    */
+                    operationObservable.subscribe(subscriber);
+
                 }
             });
         }
     }
 
-    private String doInBackgroundOperation() {
-
-        return "Complete!";
-    }
 
     private Email emailFromEditText(EditText emailText) {
         Email email = new Email();
