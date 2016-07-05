@@ -1,6 +1,6 @@
 package com.nilportugues.simplewebapi.users.di.components;
 
-import com.nilportugues.simplewebapi.main.ui.activities.MainActivity;
+import com.nilportugues.simplewebapi.users.ui.activities.UserSearchActivity;
 import com.nilportugues.simplewebapi.users.di.modules.ApiModule;
 import com.nilportugues.simplewebapi.users.di.modules.RepositoryModule;
 import com.nilportugues.simplewebapi.users.di.modules.UseCaseModule;
@@ -18,5 +18,5 @@ import dagger.Component;
         }
 )
 public interface UserComponent {
-    void inject(MainActivity activity);
+    void inject(UserSearchActivity activity);
 }

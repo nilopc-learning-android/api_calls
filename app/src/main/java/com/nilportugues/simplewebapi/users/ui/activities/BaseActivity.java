@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.ui.activities;
+package com.nilportugues.simplewebapi.users.ui.activities;
 
 import com.nilportugues.simplewebapi.MyApplication;
 import com.nilportugues.simplewebapi.shared.ui.activities.SharedBaseActivity;
