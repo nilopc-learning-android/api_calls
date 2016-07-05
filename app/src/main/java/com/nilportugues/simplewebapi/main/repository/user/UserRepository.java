@@ -12,7 +12,7 @@ import java.util.List;
 
 import retrofit2.Call;
 
-public class UserRepository {
+public class UserRepository implements com.nilportugues.simplewebapi.main.domain.model.UserRepository{
 
     private UserApi apiClient;
 
