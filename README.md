@@ -1,4 +1,6 @@
-## Recomendaciones Imanol
+## Change Retrofit to Observables and change Repositories too.
+
+## RxJava and RxAndroid
 
 - Drop AsyncTask por Rx
 - https://github.com/nilopc-learning-android/EffectiveAndroidUI 
