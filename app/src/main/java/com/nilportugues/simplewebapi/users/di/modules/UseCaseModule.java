@@ -1,8 +1,8 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
-import com.nilportugues.simplewebapi.users.domain.usecase.FindUser;
-import com.nilportugues.simplewebapi.users.domain.usecase.ListUsers;
-import com.nilportugues.simplewebapi.users.repository.UserRepository;
+import com.nilportugues.simplewebapi.users.domain.services.FindUser;
+import com.nilportugues.simplewebapi.users.domain.services.ListUsers;
+import com.nilportugues.simplewebapi.users.infrastructure.repository.UserRepository;
 
 import javax.inject.Singleton;
 

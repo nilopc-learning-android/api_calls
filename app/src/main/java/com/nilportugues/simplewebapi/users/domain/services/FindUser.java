@@ -1,8 +1,8 @@
-package com.nilportugues.simplewebapi.users.domain.usecase;
+package com.nilportugues.simplewebapi.users.domain.services;
 
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.repository.UserRepository;
-import com.nilportugues.simplewebapi.users.repository.model.User;
+import com.nilportugues.simplewebapi.users.infrastructure.repository.UserRepository;
+import com.nilportugues.simplewebapi.users.infrastructure.repository.model.User;
 
 public class FindUser {
 

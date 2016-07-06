@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.domain.usecase.FindUser;
-import com.nilportugues.simplewebapi.users.repository.model.User;
+import com.nilportugues.simplewebapi.users.domain.services.FindUser;
+import com.nilportugues.simplewebapi.users.infrastructure.repository.model.User;
 
 import javax.inject.Inject;
 
