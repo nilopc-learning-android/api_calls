@@ -1,6 +1,7 @@
 package com.nilportugues.simplewebapi.users.ui.activities;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,13 +11,17 @@ import android.widget.TextView;
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.users.domain.usecase.FindUser;
-import com.nilportugues.simplewebapi.users.ui.rx.SearchByEmailSubscriber;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import rx.Observable;
 import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
+import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 public class UserSearchActivity extends BaseActivity {
 
@@ -32,7 +37,6 @@ public class UserSearchActivity extends BaseActivity {
     @BindView(R.id.queryButton)
     Button queryButton;
 
-    Email email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,17 +54,7 @@ public class UserSearchActivity extends BaseActivity {
     private void loadUserAsyncTask() {
         if (queryButton != null) {
 
-            email = emailFromEditText(emailText);
 
-            final Observable<Email> operationObservable = Observable.create(new Observable.OnSubscribe<Email>() {
-
-                @Override
-                public void call(Subscriber subscriber) {
-                    subscriber.onNext(email);
-                    subscriber.onCompleted();
-                }
-
-            });
 
             queryButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,17 +63,55 @@ public class UserSearchActivity extends BaseActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     responseView.setText("");
 
-                    SearchByEmailSubscriber subscriber = new SearchByEmailSubscriber(
-                            progressBar,
-                            responseView,
-                            getUserDetails
-                    );
+                    Email email = emailFromEditText(emailText);
+                    Observable<User> observable = getUserFromEmailAddress(email);
 
-                    operationObservable.subscribe(subscriber);
+                    observable
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(
+                                new Action1<User>() {
+                                    @Override
+                                    public void call(User user) {
+                                       responseView.setText(
+                                            "user: " + user.getName() + "\n" +
+                                            "email: " + user.getEmail()
+                                        );
+                                    }
+                                }, new Action1<Throwable>() {
+                                    @Override
+                                    public void call(Throwable throwable) {
+                                        Log.e("SEARCH_ERROR", throwable.getMessage());
+                                    }
+                                }, new Action0() {
+                                    @Override
+                                    public void call() {
+                                        progressBar.setVisibility(View.GONE);
+                                    }
+                                }
+                            );
 
                 }
             });
         }
+    }
+
+    private Observable<User> getUserFromEmailAddress(final Email email)
+    {
+        return Observable.create(
+                new Observable.OnSubscribe<User>() {
+                    @Override
+                    public void call(Subscriber<? super User> subscriber) {
+                        try {
+                            User user = getUserDetails.byEmail(email);
+                            subscriber.onNext(user);
+                            subscriber.onCompleted();
+                        } catch(Exception exception) {
+                            subscriber.onError(exception);
+                        }
+                    }
+                }
+        );
     }
 
 
