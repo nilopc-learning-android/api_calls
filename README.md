@@ -1,5 +1,10 @@
 ## Change Retrofit to Observables and change Repositories too.
 
+- https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/repository/UserDataRepository.java
+- https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/repository/UserRepository.java
+
+-------
+
 ## RxJava and RxAndroid
 
 - Drop AsyncTask por Rx
