@@ -19,8 +19,6 @@ import butterknife.BindView;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action0;
-import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class UserSearchActivity extends BaseActivity {
@@ -49,55 +47,42 @@ public class UserSearchActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-
-
     private void loadUserAsyncTask() {
         if (queryButton != null) {
 
+            queryButton.setOnClickListener(v -> {
 
+                progressBar.setVisibility(View.VISIBLE);
+                responseView.setText("");
 
-            queryButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(final View v) {
+                Email email = emailFromEditText(emailText);
+                Observable<User> observable = getUserFromEmailAddress(email);
 
-                    progressBar.setVisibility(View.VISIBLE);
-                    responseView.setText("");
-
-                    Email email = emailFromEditText(emailText);
-                    Observable<User> observable = getUserFromEmailAddress(email);
-
-                    observable
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(
-                                new Action1<User>() {
-                                    @Override
-                                    public void call(User user) {
-                                       responseView.setText(
-                                            "user: " + user.getName() + "\n" +
-                                            "email: " + user.getEmail()
-                                        );
-                                    }
-                                }, new Action1<Throwable>() {
-                                    @Override
-                                    public void call(Throwable throwable) {
-                                        Log.e("SEARCH_ERROR", throwable.getMessage());
-                                    }
-                                }, new Action0() {
-                                    @Override
-                                    public void call() {
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                }
-                            );
-
-                }
+                observable
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(
+                                this::addUserToResponseView,
+                                this::userFromEmailAddressException,
+                                this::hideProgressBar
+                        );
             });
         }
     }
 
-    private Observable<User> getUserFromEmailAddress(final Email email)
-    {
+    private void addUserToResponseView(User user) {
+        responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
+    }
+
+    private void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    private void userFromEmailAddressException(Throwable throwable) {
+        Log.e("SEARCH_ERROR", throwable.getMessage());
+    }
+
+    private Observable<User> getUserFromEmailAddress(final Email email) {
         return Observable.create(
                 new Observable.OnSubscribe<User>() {
                     @Override
@@ -106,14 +91,13 @@ public class UserSearchActivity extends BaseActivity {
                             User user = getUserDetails.byEmail(email);
                             subscriber.onNext(user);
                             subscriber.onCompleted();
-                        } catch(Exception exception) {
+                        } catch (Exception exception) {
                             subscriber.onError(exception);
                         }
                     }
                 }
         );
     }
-
 
     private Email emailFromEditText(EditText emailText) {
         Email email = new Email();

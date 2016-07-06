@@ -7,10 +7,11 @@ import com.nilportugues.simplewebapi.users.repository.model.User;
 import rx.Subscriber;
 
 
-public class SearchByEmailSubscriber extends Subscriber<Email>{
+public class SearchByEmailSubscriber extends Subscriber<Email> {
 
     FindUser getUserDetails;
     User user;
+
     public SearchByEmailSubscriber(FindUser getUserDetails) {
         this.getUserDetails = getUserDetails;
     }
