@@ -23,18 +23,20 @@ import rx.schedulers.Schedulers;
 
 public class UserSearchActivity extends BaseActivity {
 
-
     @Inject
     FindUser getUserDetails;
+
     @BindView(R.id.responseView)
     TextView responseView;
+
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
+
     @BindView(R.id.emailText)
     EditText emailText;
+
     @BindView(R.id.queryButton)
     Button queryButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
