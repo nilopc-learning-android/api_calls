@@ -18,12 +18,10 @@
 
 - http://stackoverflow.com/questions/23429046/can-retrofit-with-okhttp-use-cache-data-when-offline
 - https://github.com/digitalbuddha/StoreDemo
-- Change Retrofit to Observables + Cache
 
-**Retrofit Observables**
+**Retrofit to Domain Entities**
 
 - https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/repository/UserDataRepository.java
-- https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/repository/UserRepository.java
 
 **Cache**
 
@@ -37,6 +35,7 @@
 **UseCases**
 
 - https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/interactor/UseCase.java
+- UseCase with RxJava
 
 **RxJava and RxAndroid**
 
@@ -49,7 +48,7 @@
 
 - Easy API endpoint data access.
 - To generate POJOs: http://www.jsonschema2pojo.org/
-
+- Observables
 
 **Add DependencyInjecion**
 
