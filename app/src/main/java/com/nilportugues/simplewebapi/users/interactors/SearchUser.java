@@ -5,11 +5,14 @@ import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
+import javax.inject.Inject;
+
 import rx.Observable;
 import rx.Subscriber;
 
 public class SearchUser {
 
+    @Inject
     UserDataQuery userDataQuery;
 
     public SearchUser(UserDataQuery userDataQuery) {
