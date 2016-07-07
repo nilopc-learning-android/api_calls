@@ -1,4 +1,6 @@
 
+http://www.vogella.com/tutorials/AndroidSQLite/article.html#sqlite-architecture
+
  - Activity or Fragment
      - Recibe: Presenter
      - setea/esconde/muestra Fragments
@@ -8,6 +10,7 @@
     - Recibe: UserModelDataMapper
     - Internamente implementa:
         - private final class xxxSubscriber extends Rx.Subscriber
+
 ---
 
 # Todo:
