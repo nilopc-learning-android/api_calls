@@ -53,7 +53,7 @@ public class UserSearchActivity extends BaseActivity {
             queryButton.setOnClickListener(v -> {
 
                 progressBar.setVisibility(View.VISIBLE);
-                responseView.setText("");
+
 
                 Email email = emailFromEditText(emailText);
 
@@ -62,23 +62,24 @@ public class UserSearchActivity extends BaseActivity {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                            this::addUserToResponseView,
-                            this::userFromEmailAddressException,
-                            this::hideProgressBar
+                            this::onNextUserDetails,
+                            this::onErrorUserDetails,
+                            this::onCompleteUserDetails
                         );
             });
         }
     }
 
-    private void addUserToResponseView(User user) {
+    private void onNextUserDetails(User user) {
         responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
-    }
-
-    private void hideProgressBar() {
         progressBar.setVisibility(View.GONE);
     }
 
-    private void userFromEmailAddressException(Throwable throwable) {
+    private void onCompleteUserDetails() {
+
+    }
+
+    private void onErrorUserDetails(Throwable throwable) {
         Log.e("SEARCH_ERROR", throwable.getMessage());
     }
 

@@ -1,6 +1,7 @@
-
-
 # Todo:
+
+- Network status. Do not call api is no internet and not un cache
+
 **Repository cache: caching when user goes offline**
 
 - http://stackoverflow.com/questions/23429046/can-retrofit-with-okhttp-use-cache-data-when-offline
@@ -18,6 +19,8 @@
 - https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/cache/UserCacheImpl.java
 
 # Done:
+
+- Stop weird refreshing. Remove progressbar status right having UI elements populated.
 
 **UseCases**
 
