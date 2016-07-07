@@ -9,37 +9,34 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
+import com.nilportugues.simplewebapi.shared.executor.PostExecutionThread;
+import com.nilportugues.simplewebapi.shared.executor.ThreadExecutor;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.users.domain.services.GetUserByEmail;
 import com.nilportugues.simplewebapi.users.interactors.SearchUser;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import rx.Subscriber;
 
 public class UserSearchActivity extends BaseActivity {
 
-    @Inject
-    SearchUser userDetails;
+    @Inject GetUserByEmail getUserByEmail;
 
-    @BindView(R.id.responseView)
-    TextView responseView;
+    @Inject ThreadExecutor threadExecutor;
+    @Inject PostExecutionThread postExecutionThread;
 
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
+    @BindView(R.id.responseView) TextView responseView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.emailText) EditText emailText;
+    @BindView(R.id.queryButton) Button queryButton;
 
-    @BindView(R.id.emailText)
-    EditText emailText;
 
-    @BindView(R.id.queryButton)
-    Button queryButton;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getComponent().inject(this);
         loadUserAsyncTask();
     }
 
@@ -54,11 +51,19 @@ public class UserSearchActivity extends BaseActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
+                SearchUser searchUser = new SearchUser(
+                        threadExecutor,
+                        postExecutionThread,
+                        emailFromEditText(emailText)
+                );
 
-                Email email = emailFromEditText(emailText);
 
+
+                searchUser.execute(new UISubscriber());
+
+                /*
                 userDetails
-                        .detailsFromEmail(email)
+                        .execute(email)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
@@ -66,21 +71,28 @@ public class UserSearchActivity extends BaseActivity {
                             this::onErrorUserDetails,
                             this::onCompleteUserDetails
                         );
+                        */
             });
         }
     }
 
-    private void onNextUserDetails(User user) {
-        responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
-        progressBar.setVisibility(View.GONE);
-    }
+    protected class UISubscriber extends Subscriber<User>{
 
-    private void onCompleteUserDetails() {
+        @Override
+        public void onCompleted() {
 
-    }
+        }
 
-    private void onErrorUserDetails(Throwable throwable) {
-        Log.e("SEARCH_ERROR", throwable.getMessage());
+        @Override
+        public void onError(Throwable e) {
+            Log.e("SEARCH_ERROR", e.getMessage());
+        }
+
+        @Override
+        public void onNext(User user) {
+            responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
+            progressBar.setVisibility(View.GONE);
+        }
     }
 
     private Email emailFromEditText(EditText emailText) {
@@ -89,6 +101,8 @@ public class UserSearchActivity extends BaseActivity {
         if (emailText != null && 0 != emailText.getText().length()) {
             email = new Email(emailText.getText().toString());
         }
+
+        Log.i("EMAIL_VAL", email.toString());
 
         return email;
     }

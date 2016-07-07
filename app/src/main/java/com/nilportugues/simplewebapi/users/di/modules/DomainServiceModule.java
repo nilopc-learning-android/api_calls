@@ -1,9 +1,8 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
-import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
+import com.nilportugues.simplewebapi.main.di.PerActivity;
+import com.nilportugues.simplewebapi.users.domain.services.GetUserByEmail;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -11,8 +10,8 @@ import dagger.Provides;
 @Module
 public class DomainServiceModule {
     @Provides
-    @Singleton
-    UserDataQuery providesUserDataQuery(UserRepository userRepository) {
-        return new UserDataQuery(userRepository);
+    @PerActivity
+    GetUserByEmail providesUserDataQuery(UserRepository userRepository) {
+        return new GetUserByEmail(userRepository);
     }
 }

@@ -1,9 +1,8 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
+import com.nilportugues.simplewebapi.main.di.PerActivity;
 import com.nilportugues.simplewebapi.users.network.UserApiFactory;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
-
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -11,9 +10,8 @@ import dagger.Provides;
 @Module
 public class RepositoryModule {
 
-
     @Provides
-    @Singleton
+    @PerActivity
     UserRepository provideUserRepository(UserApiFactory apiFactory) {
         return new UserRepository(apiFactory);
     }

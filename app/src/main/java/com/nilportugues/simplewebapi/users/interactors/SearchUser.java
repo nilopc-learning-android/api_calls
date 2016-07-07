@@ -1,38 +1,34 @@
 package com.nilportugues.simplewebapi.users.interactors;
 
 
+import com.nilportugues.simplewebapi.shared.executor.PostExecutionThread;
+import com.nilportugues.simplewebapi.shared.executor.ThreadExecutor;
+import com.nilportugues.simplewebapi.shared.interactors.UseCase;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
-import com.nilportugues.simplewebapi.users.repository.model.User;
+import com.nilportugues.simplewebapi.users.domain.services.GetUserByEmail;
 
 import javax.inject.Inject;
 
 import rx.Observable;
-import rx.Subscriber;
 
-public class SearchUser {
+public class SearchUser extends UseCase{
 
     @Inject
-    UserDataQuery userDataQuery;
+    GetUserByEmail getUserByEmail;
 
-    public SearchUser(UserDataQuery userDataQuery) {
-        this.userDataQuery = userDataQuery;
+    private Email email;
+
+    public SearchUser(
+            ThreadExecutor threadExecutor,
+            PostExecutionThread postExecutionThread,
+            Email email
+    ) {
+        super(threadExecutor, postExecutionThread);
+        this.email = email;
     }
 
-    public Observable<User> detailsFromEmail(final Email email) {
-        return Observable.create(
-                new Observable.OnSubscribe<User>() {
-                    @Override
-                    public void call(Subscriber<? super User> subscriber) {
-                        try {
-                            User user = userDataQuery.byEmail(email);
-                            subscriber.onNext(user);
-                            subscriber.onCompleted();
-                        } catch (Exception exception) {
-                            subscriber.onError(exception);
-                        }
-                    }
-                }
-        );
+    @Override
+    protected Observable buildObservable() {
+        return getUserByEmail.execute(this.email);
     }
 }

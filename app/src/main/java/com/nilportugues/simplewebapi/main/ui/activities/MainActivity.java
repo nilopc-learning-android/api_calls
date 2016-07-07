@@ -7,6 +7,10 @@ import android.os.Bundle;
 import com.nilportugues.simplewebapi.users.ui.activities.UserSearchActivity;
 
 public class MainActivity extends Activity {
+
+    /**
+     * Shows a pretty Splash and moves on to the next Activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
