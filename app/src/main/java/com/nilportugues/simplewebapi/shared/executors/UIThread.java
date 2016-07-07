@@ -1,6 +1,6 @@
-package com.nilportugues.simplewebapi.main.executors;
+package com.nilportugues.simplewebapi.shared.executors;
 
-import com.nilportugues.simplewebapi.main.threads.PostExecutionThread;
+import com.nilportugues.simplewebapi.shared.threads.PostExecutionThread;
 
 import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;

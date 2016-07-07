@@ -8,8 +8,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.main.executors.IOThread;
-import com.nilportugues.simplewebapi.main.executors.UIThread;
+import com.nilportugues.simplewebapi.shared.executors.IOThread;
+import com.nilportugues.simplewebapi.shared.executors.UIThread;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
 import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
 import com.nilportugues.simplewebapi.users.interactors.SearchUser;

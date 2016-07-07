@@ -1,6 +1,6 @@
-package com.nilportugues.simplewebapi.main.executors;
+package com.nilportugues.simplewebapi.shared.executors;
 
-import com.nilportugues.simplewebapi.main.threads.BackgroundThread;
+import com.nilportugues.simplewebapi.shared.threads.BackgroundThread;
 
 import rx.Scheduler;
 import rx.schedulers.Schedulers;

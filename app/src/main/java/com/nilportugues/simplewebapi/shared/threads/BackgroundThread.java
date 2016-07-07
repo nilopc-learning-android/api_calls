@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.threads;
+package com.nilportugues.simplewebapi.shared.threads;
 
 import rx.Scheduler;
 
