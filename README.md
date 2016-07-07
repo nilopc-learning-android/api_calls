@@ -1,5 +1,7 @@
 ## Change Retrofit to Observables + Cache
 
+Networknstatus. Do not call api is no internet and not un cache
+
 **Retrofit Observables**
 
 - https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/repository/UserDataRepository.java
