@@ -1,7 +1,7 @@
 package com.nilportugues.simplewebapi.main.interactors;
 
-import com.nilportugues.simplewebapi.main.executors.BackgroundThread;
-import com.nilportugues.simplewebapi.main.executors.PostExecutionThread;
+import com.nilportugues.simplewebapi.main.threads.BackgroundThread;
+import com.nilportugues.simplewebapi.main.threads.PostExecutionThread;
 
 import rx.Observable;
 import rx.Subscriber;

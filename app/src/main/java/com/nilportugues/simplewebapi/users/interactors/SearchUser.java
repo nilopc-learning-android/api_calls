@@ -1,8 +1,8 @@
 package com.nilportugues.simplewebapi.users.interactors;
 
 
-import com.nilportugues.simplewebapi.main.executors.BackgroundThread;
-import com.nilportugues.simplewebapi.main.executors.PostExecutionThread;
+import com.nilportugues.simplewebapi.main.threads.BackgroundThread;
+import com.nilportugues.simplewebapi.main.threads.PostExecutionThread;
 import com.nilportugues.simplewebapi.main.interactors.UseCase;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;

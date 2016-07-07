@@ -1,5 +1,7 @@
 package com.nilportugues.simplewebapi.main.executors;
 
+import com.nilportugues.simplewebapi.main.threads.BackgroundThread;
+
 import rx.Scheduler;
 import rx.schedulers.Schedulers;
 
