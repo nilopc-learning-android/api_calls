@@ -1,3 +1,15 @@
+
+ - Activity or Fragment
+     - Recibe: Presenter
+     - setea/esconde/muestra Fragments
+     
+ - Presenter:
+    - Recibe: UseCase
+    - Recibe: UserModelDataMapper
+    - Internamente implementa:
+        - private final class xxxSubscriber extends Rx.Subscriber
+---
+
 # Todo:
 
 - Network status. Do not call api is no internet and not un cache

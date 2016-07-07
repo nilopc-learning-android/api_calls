@@ -12,7 +12,7 @@ import rx.subscriptions.Subscriptions;
 public abstract class UseCase {
     private final PostExecutionThread postExecutionThread;
     private final BackgroundThread backgroundThread;
-    private Subscription subscription = Subscriptions.empty();
+    protected Subscription subscription = Subscriptions.empty();
 
     public UseCase(PostExecutionThread postExecutionThread, BackgroundThread backgroundThread) {
         this.postExecutionThread = postExecutionThread;

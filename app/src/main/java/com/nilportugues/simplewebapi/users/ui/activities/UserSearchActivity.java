@@ -1,7 +1,6 @@
 package com.nilportugues.simplewebapi.users.ui.activities;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,20 +22,11 @@ import rx.Subscriber;
 
 public class UserSearchActivity extends BaseActivity {
 
-    @Inject
-    UserDataQuery userDataQuery;
-
-    @BindView(R.id.responseView)
-    TextView responseView;
-
-    @BindView(R.id.progressBar)
-    ProgressBar progressBar;
-
-    @BindView(R.id.emailText)
-    EditText emailText;
-
-    @BindView(R.id.queryButton)
-    Button queryButton;
+    @Inject UserDataQuery userDataQuery;
+    @BindView(R.id.responseView) TextView responseView;
+    @BindView(R.id.progressBar) ProgressBar progressBar;
+    @BindView(R.id.emailText) EditText userIdField;
+    @BindView(R.id.queryButton) Button queryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,22 +41,16 @@ public class UserSearchActivity extends BaseActivity {
 
     private void loadUserAsyncTask() {
         if (queryButton != null) {
-
             queryButton.setOnClickListener(v -> {
-
                 progressBar.setVisibility(View.VISIBLE);
-                UserId userId = emailFromEditText(emailText);
-
 
                 SearchUser searchUser = new SearchUser(
                         new UIThread(),
                         new IOThread(),
                         userDataQuery,
-                        userId
+                        UserSearchActivity.this.userIdFromField(userIdField)
                 );
-
                 searchUser.execute(new UISubscriber());
-
             });
         }
     }
@@ -75,23 +59,22 @@ public class UserSearchActivity extends BaseActivity {
 
         @Override
         public void onCompleted() {
-
+            progressBar.setVisibility(View.GONE);
         }
 
         @Override
         public void onError(Throwable e) {
-            Log.e("SEARCH_ERROR", e.getMessage());
+            responseView.setText("user not found");
         }
 
         @Override
         public void onNext(User user) {
             responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
-            progressBar.setVisibility(View.GONE);
+
         }
-    };
+    }
 
-
-    private UserId emailFromEditText(EditText editText) {
+    private UserId userIdFromField(EditText editText) {
         UserId userId = new UserId();
 
         if (editText != null && 0 != editText.getText().length()) {

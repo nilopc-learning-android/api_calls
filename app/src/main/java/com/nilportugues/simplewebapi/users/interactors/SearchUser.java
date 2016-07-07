@@ -11,8 +11,8 @@ import rx.Observable;
 
 public class SearchUser extends UseCase {
 
-    private UserDataQuery userDataQuery;
-    private UserId userId;
+    private final UserDataQuery userDataQuery;
+    private final UserId userId;
 
     public SearchUser(
             PostExecutionThread postExecutionThread,
