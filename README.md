@@ -1,3 +1,5 @@
+Do progressbar hide on onConplete after setting the data. This will stop weird refreshings
+
 ## Change Retrofit to Observables + Cache
 
 Networknstatus. Do not call api is no internet and not un cache
