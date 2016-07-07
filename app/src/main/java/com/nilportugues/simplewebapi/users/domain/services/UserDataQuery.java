@@ -4,11 +4,11 @@ import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
-public class FindUserQuery {
+public class UserDataQuery {
 
     private UserRepository userRepository;
 
-    public FindUserQuery(UserRepository userRepository) {
+    public UserDataQuery(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

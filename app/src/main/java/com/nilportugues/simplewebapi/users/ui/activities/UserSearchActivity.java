@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.domain.services.FindUserQuery;
-import com.nilportugues.simplewebapi.users.interactors.GetUserDetails;
+import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
+import com.nilportugues.simplewebapi.users.interactors.SearchUser;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import javax.inject.Inject;
@@ -23,7 +23,7 @@ import rx.schedulers.Schedulers;
 public class UserSearchActivity extends BaseActivity {
 
     @Inject
-    FindUserQuery findUser;
+    UserDataQuery findUser;
 
     @BindView(R.id.responseView)
     TextView responseView;
@@ -57,7 +57,7 @@ public class UserSearchActivity extends BaseActivity {
                 responseView.setText("");
 
                 Email email = emailFromEditText(emailText);
-                GetUserDetails userDetails = new GetUserDetails(findUser);
+                SearchUser userDetails = new SearchUser(findUser);
 
                 userDetails
                         .detailsFromEmail(email)

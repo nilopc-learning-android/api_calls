@@ -11,6 +11,8 @@
 
 ## UseCases
 
+Siguiente paso es abstraccion e inyectar esto en activity y aqui inyectar el repo
+
 - https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/interactor/UseCase.java
 
 
