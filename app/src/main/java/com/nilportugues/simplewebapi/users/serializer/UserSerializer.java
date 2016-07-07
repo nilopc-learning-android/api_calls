@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.infrastructure.serializer;
+package com.nilportugues.simplewebapi.users.serializer;
 
 /**
  * Created by nilopc on 7/07/16.

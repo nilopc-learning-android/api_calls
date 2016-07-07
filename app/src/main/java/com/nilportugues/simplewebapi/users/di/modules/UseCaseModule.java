@@ -1,8 +1,8 @@
 package com.nilportugues.simplewebapi.users.di.modules;
 
-import com.nilportugues.simplewebapi.users.domain.services.FindUser;
+import com.nilportugues.simplewebapi.users.domain.services.FindUserQuery;
 import com.nilportugues.simplewebapi.users.domain.services.ListUsers;
-import com.nilportugues.simplewebapi.users.infrastructure.repository.UserRepository;
+import com.nilportugues.simplewebapi.users.repository.UserRepository;
 
 import javax.inject.Singleton;
 
@@ -15,8 +15,8 @@ public class UseCaseModule {
 
     @Provides
     @Singleton
-    FindUser providesFindUser(UserRepository userRepository) {
-        return new FindUser(userRepository);
+    FindUserQuery providesFindUser(UserRepository userRepository) {
+        return new FindUserQuery(userRepository);
     }
 
     @Provides

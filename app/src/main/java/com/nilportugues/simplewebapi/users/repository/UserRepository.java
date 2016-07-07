@@ -1,11 +1,11 @@
-package com.nilportugues.simplewebapi.users.infrastructure.repository;
+package com.nilportugues.simplewebapi.users.repository;
 
 import android.util.Log;
 
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.infrastructure.api.UserApi;
-import com.nilportugues.simplewebapi.users.infrastructure.api.UserApiFactory;
-import com.nilportugues.simplewebapi.users.infrastructure.repository.model.User;
+import com.nilportugues.simplewebapi.users.network.UserApi;
+import com.nilportugues.simplewebapi.users.network.UserApiFactory;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.io.IOException;
 import java.util.List;

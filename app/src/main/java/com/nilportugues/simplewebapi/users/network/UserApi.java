@@ -1,7 +1,7 @@
-package com.nilportugues.simplewebapi.users.infrastructure.api;
+package com.nilportugues.simplewebapi.users.network;
 
 
-import com.nilportugues.simplewebapi.users.infrastructure.repository.model.User;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import java.util.List;
 

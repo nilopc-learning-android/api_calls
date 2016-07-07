@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.infrastructure.repository.model;
+package com.nilportugues.simplewebapi.users.repository.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -10,21 +10,20 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
-import com.nilportugues.simplewebapi.users.domain.services.FindUser;
-import com.nilportugues.simplewebapi.users.infrastructure.repository.model.User;
+import com.nilportugues.simplewebapi.users.domain.services.FindUserQuery;
+import com.nilportugues.simplewebapi.users.interactors.GetUserDetails;
+import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class UserSearchActivity extends BaseActivity {
 
     @Inject
-    FindUser getUserDetails;
+    FindUserQuery findUser;
 
     @BindView(R.id.responseView)
     TextView responseView;
@@ -58,15 +57,16 @@ public class UserSearchActivity extends BaseActivity {
                 responseView.setText("");
 
                 Email email = emailFromEditText(emailText);
-                Observable<User> observable = getUserFromEmailAddress(email);
+                GetUserDetails userDetails = new GetUserDetails(findUser);
 
-                observable
+                userDetails
+                        .detailsFromEmail(email)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                this::addUserToResponseView,
-                                this::userFromEmailAddressException,
-                                this::hideProgressBar
+                            this::addUserToResponseView,
+                            this::userFromEmailAddressException,
+                            this::hideProgressBar
                         );
             });
         }
@@ -82,23 +82,6 @@ public class UserSearchActivity extends BaseActivity {
 
     private void userFromEmailAddressException(Throwable throwable) {
         Log.e("SEARCH_ERROR", throwable.getMessage());
-    }
-
-    private Observable<User> getUserFromEmailAddress(final Email email) {
-        return Observable.create(
-                new Observable.OnSubscribe<User>() {
-                    @Override
-                    public void call(Subscriber<? super User> subscriber) {
-                        try {
-                            User user = getUserDetails.byEmail(email);
-                            subscriber.onNext(user);
-                            subscriber.onCompleted();
-                        } catch (Exception exception) {
-                            subscriber.onError(exception);
-                        }
-                    }
-                }
-        );
     }
 
     private Email emailFromEditText(EditText emailText) {
