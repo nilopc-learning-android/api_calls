@@ -1,8 +1,10 @@
 package com.nilportugues.simplewebapi.users.domain.services;
 
-import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
 import com.nilportugues.simplewebapi.users.repository.model.User;
+
+import rx.Observable;
 
 public class UserDataQuery {
 
@@ -12,7 +14,7 @@ public class UserDataQuery {
         this.userRepository = userRepository;
     }
 
-    public User byEmail(Email email) {
-        return userRepository.findByEmail(email);
+    public Observable<User> byUserId(UserId userId) {
+        return userRepository.findById(userId);
     }
 }

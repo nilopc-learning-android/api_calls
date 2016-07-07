@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.main.executors.IOThread;
 import com.nilportugues.simplewebapi.main.executors.UIThread;
-import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
 import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
 import com.nilportugues.simplewebapi.users.interactors.SearchUser;
 import com.nilportugues.simplewebapi.users.repository.model.User;
@@ -55,14 +55,14 @@ public class UserSearchActivity extends BaseActivity {
             queryButton.setOnClickListener(v -> {
 
                 progressBar.setVisibility(View.VISIBLE);
-                Email email = emailFromEditText(emailText);
+                UserId userId = emailFromEditText(emailText);
 
 
                 SearchUser searchUser = new SearchUser(
                         new UIThread(),
                         new IOThread(),
                         userDataQuery,
-                        email
+                        userId
                 );
 
                 searchUser.execute(new UISubscriber());
@@ -91,13 +91,13 @@ public class UserSearchActivity extends BaseActivity {
     };
 
 
-    private Email emailFromEditText(EditText emailText) {
-        Email email = new Email();
+    private UserId emailFromEditText(EditText editText) {
+        UserId userId = new UserId();
 
-        if (emailText != null && 0 != emailText.getText().length()) {
-            email = new Email(emailText.getText().toString());
+        if (editText != null && 0 != editText.getText().length()) {
+            userId = new UserId(editText.getText().toString());
         }
 
-        return email;
+        return userId;
     }
 }
