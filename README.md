@@ -23,6 +23,7 @@
 **UseCases**
 
 - https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/interactor/UseCase.java
+- UseCase with RxJava
 
 **RxJava and RxAndroid**
 
