@@ -9,20 +9,22 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
+import com.nilportugues.simplewebapi.main.executors.IOThread;
+import com.nilportugues.simplewebapi.main.executors.UIThread;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.Email;
+import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
 import com.nilportugues.simplewebapi.users.interactors.SearchUser;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import rx.Subscriber;
 
 public class UserSearchActivity extends BaseActivity {
 
     @Inject
-    SearchUser userDetails;
+    UserDataQuery userDataQuery;
 
     @BindView(R.id.responseView)
     TextView responseView;
@@ -53,35 +55,41 @@ public class UserSearchActivity extends BaseActivity {
             queryButton.setOnClickListener(v -> {
 
                 progressBar.setVisibility(View.VISIBLE);
-
-
                 Email email = emailFromEditText(emailText);
 
-                userDetails
-                        .detailsFromEmail(email)
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(
-                            this::onNextUserDetails,
-                            this::onErrorUserDetails,
-                            this::onCompleteUserDetails
-                        );
+
+                SearchUser searchUser = new SearchUser(
+                        new UIThread(),
+                        new IOThread(),
+                        userDataQuery,
+                        email
+                );
+
+                searchUser.execute(new UISubscriber());
+
             });
         }
     }
 
-    private void onNextUserDetails(User user) {
-        responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
-        progressBar.setVisibility(View.GONE);
-    }
+    private class UISubscriber extends Subscriber<User>{
 
-    private void onCompleteUserDetails() {
+        @Override
+        public void onCompleted() {
 
-    }
+        }
 
-    private void onErrorUserDetails(Throwable throwable) {
-        Log.e("SEARCH_ERROR", throwable.getMessage());
-    }
+        @Override
+        public void onError(Throwable e) {
+            Log.e("SEARCH_ERROR", e.getMessage());
+        }
+
+        @Override
+        public void onNext(User user) {
+            responseView.setText("user: " + user.getName() + "\n" + "email: " + user.getEmail());
+            progressBar.setVisibility(View.GONE);
+        }
+    };
+
 
     private Email emailFromEditText(EditText emailText) {
         Email email = new Email();
