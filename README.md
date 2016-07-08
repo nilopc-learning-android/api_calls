@@ -10,7 +10,7 @@
 
 ## Realm for local storage database.
 
-- http://www.vogella.com/tutorials/AndroidSQLite/article.html#sqlite-architecture
+- https://github.com/realm/realm-java/tree/master/examples/rxJavaExample
 - https://github.com/realm/realm-java/blob/master/examples/rxJavaExample/src/main/java/io/realm/examples/rxjava/gotchas/GotchasActivity.java
 
 ## Working with views
