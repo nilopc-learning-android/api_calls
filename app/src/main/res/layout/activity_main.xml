@@ -69,5 +69,5 @@
         android:text="ACTIVITY 3"
         android:id="@+id/button3"
         android:layout_gravity="center_horizontal"
-        android:onClick=""/>
+        />
 </LinearLayout>
