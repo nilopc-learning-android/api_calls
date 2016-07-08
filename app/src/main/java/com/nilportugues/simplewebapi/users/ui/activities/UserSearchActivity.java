@@ -40,59 +40,40 @@ public class UserSearchActivity extends BaseActivity {
         loadActivity3();
     }
 
-    private void loadActivity2() {
-        if(activity2Button !=null) {
-            activity2Button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(UserSearchActivity.this, Activity2.class);
-                    startActivity(intent);
-                }
-            });
-        }
-    }
-
-    private void loadActivity3() {
-        if(activity3Button !=null) {
-            activity3Button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(UserSearchActivity.this, Activity3.class);
-                    startActivity(intent);
-                }
-            });
-        }
-    }
-
-
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
 
-    private void loadUserAsyncTask() {
-        if (queryButton != null) {
-            queryButton.setOnClickListener(v -> {
-                progressBar.setVisibility(View.VISIBLE);
-
-                UserId userId = new UserId();
-
-                if (userIdField != null && 0 != userIdField.getText().length()) {
-                    userId = new UserId(userIdField.getText().toString());
-                }
-
-
-                SearchUser searchUser = new SearchUser(
-                        new UIThread(),
-                        new IOThread(),
-                        userDataQuery,
-                        userId
-                );
-                searchUser.execute(new UISubscriber());
+    protected void loadActivity2() {
+            activity2Button.setOnClickListener(view -> {
+                Intent intent = new Intent(UserSearchActivity.this, Activity2.class);
+                startActivity(intent);
             });
-        }
     }
 
-    private class UISubscriber extends Subscriber<User>{
+    protected void loadActivity3() {
+            activity3Button.setOnClickListener(view -> {
+                Intent intent = new Intent(UserSearchActivity.this, Activity3.class);
+                startActivity(intent);
+            });
+    }
+
+    protected void loadUserAsyncTask() {
+        queryButton.setOnClickListener(v -> {
+            progressBar.setVisibility(View.VISIBLE);
+
+            UserId userId = new UserId();
+            if (userIdField != null && 0 != userIdField.getText().length()) {
+                userId = new UserId(userIdField.getText().toString());
+            }
+
+            SearchUser searchUser = new SearchUser(new UIThread(), new IOThread(), userDataQuery, userId);
+            searchUser.execute(new UISubscriber());
+        });
+
+    }
+
+    protected class UISubscriber extends Subscriber<User>{
 
         @Override
         public void onCompleted() {
