@@ -17,6 +17,10 @@ http://www.vogella.com/tutorials/AndroidSQLite/article.html#sqlite-architecture
 
 - Network status. Do not call api is no internet and not un cache
 
+**Testing**
+
+- https://github.com/facebook/screenshot-tests-for-android
+
 **Repository cache: caching when user goes offline**
 
 - http://stackoverflow.com/questions/23429046/can-retrofit-with-okhttp-use-cache-data-when-offline
