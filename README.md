@@ -1,6 +1,13 @@
 ## Retrofit factory
+
 ## Permissions on demand
 - https://github.com/Karumi/Dexter
+
+
+## Network status
+
+- Do not call api is no internet and not un cache
+- https://github.com/nilopc-learning-android/ZhiHuDaily/blob/master/app/src/main/java/com/marktony/zhihudaily/Utils/NetworkState.java
 
 ## Social login
 
@@ -37,8 +44,6 @@ Images add much-needed context and visual flair to Android applications. Picasso
 ---
 
 # Todo:
-
-- Network status. Do not call api is no internet and not un cache
 
 **Testing**
 
