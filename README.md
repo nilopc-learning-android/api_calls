@@ -52,6 +52,7 @@ https://github.com/afollestad/material-dialogs
 **Testing**
 
 - https://github.com/facebook/screenshot-tests-for-android
+- https://github.com/mattlogan/locationtracker (*unit style)
 
 **Repository cache: caching when user goes offline**
 
