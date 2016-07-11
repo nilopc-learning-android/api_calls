@@ -1,4 +1,6 @@
 ## Retrofit factory
+## Permissions on demand
+- https://github.com/Karumi/Dexter
 
 ## Social login
 
