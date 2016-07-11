@@ -41,6 +41,10 @@
 ## Picaso para cacheo de imagenes
 Images add much-needed context and visual flair to Android applications. Picasso allows for hassle-free image loading in your application—often in one line of code!
 
+## Dialogs
+
+https://github.com/afollestad/material-dialogs
+
 ---
 
 # Todo:
