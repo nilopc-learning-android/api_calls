@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.nilportugues.simplewebapi.shared.executors.IOThread;
 import com.nilportugues.simplewebapi.shared.executors.UIThread;
 import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
-import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
+import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 import com.nilportugues.simplewebapi.users.interactors.SearchUser;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
@@ -17,12 +17,12 @@ import rx.Subscriber;
 
 public class UserProfileView implements View.OnClickListener{
 
-    private final UserDataQuery userDataQuery;
+    private final GetUserService userDataQuery;
     private final TextView responseView;
     private final ProgressBar progressBar;
     private final EditText userIdField;
 
-    public UserProfileView(UserDataQuery userDataQuery, EditText userIdField, TextView responseView, ProgressBar progressBar) {
+    public UserProfileView(GetUserService userDataQuery, EditText userIdField, TextView responseView, ProgressBar progressBar) {
         this.userDataQuery = userDataQuery;
         this.userIdField = userIdField;
         this.responseView = responseView;
@@ -39,10 +39,10 @@ public class UserProfileView implements View.OnClickListener{
         }
 
         SearchUser searchUser = new SearchUser(new UIThread(), new IOThread(), userDataQuery, userId);
-        searchUser.execute(new UISubscriber());
+        searchUser.execute(new SearchUserSubscriber());
     }
 
-    protected class UISubscriber extends Subscriber<User> {
+    protected class SearchUserSubscriber extends Subscriber<User> {
 
         @Override
         public void onCompleted() {

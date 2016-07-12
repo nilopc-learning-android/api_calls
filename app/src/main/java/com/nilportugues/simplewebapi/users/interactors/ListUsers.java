@@ -4,29 +4,25 @@ package com.nilportugues.simplewebapi.users.interactors;
 import com.nilportugues.simplewebapi.shared.interactors.UseCase;
 import com.nilportugues.simplewebapi.shared.threads.BackgroundThread;
 import com.nilportugues.simplewebapi.shared.threads.PostExecutionThread;
-import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
-import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
+import com.nilportugues.simplewebapi.users.domain.services.GetUsersService;
 
 import rx.Observable;
 
-public class SearchUser extends UseCase {
+public class ListUsers extends UseCase {
 
-    private final GetUserService userDataQuery;
-    private final UserId userId;
+    private final GetUsersService getUsersService;
 
-    public SearchUser(
+    public ListUsers(
             PostExecutionThread postExecutionThread,
             BackgroundThread backgroundThread,
-            GetUserService userDataQuery,
-            UserId email
+            GetUsersService getUsersService
     ) {
         super(postExecutionThread, backgroundThread);
-        this.userDataQuery = userDataQuery;
-        this.userId = email;
+        this.getUsersService = getUsersService;
     }
 
     @Override
     protected Observable buildUseCaseObservable() {
-        return userDataQuery.execute(userId);
+        return getUsersService.execute();
     }
 }

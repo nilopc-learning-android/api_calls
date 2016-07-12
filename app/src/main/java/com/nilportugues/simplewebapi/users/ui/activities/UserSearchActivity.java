@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.users.domain.services.UserDataQuery;
+import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 import com.nilportugues.simplewebapi.users.ui.view.UserProfileView;
 
 import javax.inject.Inject;
@@ -17,7 +17,8 @@ import butterknife.BindView;
 
 public class UserSearchActivity extends BaseActivity {
 
-    @Inject UserDataQuery userDataQuery;
+
+    @Inject GetUserService userDataQuery;
     @BindView(R.id.responseView) TextView responseView;
     @BindView(R.id.progressBar) ProgressBar progressBar;
     @BindView(R.id.emailText) EditText userIdField;

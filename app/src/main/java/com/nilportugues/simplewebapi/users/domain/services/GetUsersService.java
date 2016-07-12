@@ -1,20 +1,22 @@
 package com.nilportugues.simplewebapi.users.domain.services;
 
-import com.nilportugues.simplewebapi.users.domain.model.attributes.UserId;
 import com.nilportugues.simplewebapi.users.repository.UserRepository;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 
+import java.util.List;
+
 import rx.Observable;
 
-public class UserDataQuery {
+public class GetUsersService {
 
     private UserRepository userRepository;
 
-    public UserDataQuery(UserRepository userRepository) {
+    public GetUsersService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public Observable<User> byUserId(UserId userId) {
-        return userRepository.findById(userId);
+    public Observable<List<User>> execute() {
+        return userRepository.findAll();
     }
+
 }
