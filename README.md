@@ -94,3 +94,25 @@ https://github.com/afollestad/material-dialogs
 
 - Added Dagger2 for non UI related
 - Added ButterKnife for UI related: https://github.com/JakeWharton/butterknife
+
+
+
+----------
+
+# VIEWS
+
+#### PageAdapter vs FragmentPagerAdapter vs FragmentStatePagerAdapter
+
+ - `FragmentPagerAdapter`
+    - Fragments are detached, NOT destroyed.
+    - Useful for SMALL list of fragments. 
+    - Remains in memory. **Fills up memory and app will crash** if lots of fragments.
+    - Use for static data not coming from network and does not require calculations.
+ - `FragmentStatePagerAdapter`
+    - Works well for LARGE lists. 
+    - It destroys fragments when not used.
+    - Not kept in memory (as it keeps destroying).
+    - Requires proper use of CACHING (eg: repos) when using data from network or heavy calculations.
+ - `PageAdapter` 
+    - Items are destroyed. 
+    - Useful for SMALL lists.

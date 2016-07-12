@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
-import com.nilportugues.simplewebapi.users.ui.view.UserProfileView;
+import com.nilportugues.simplewebapi.users.ui.views.UserProfileView;
 
 import javax.inject.Inject;
 

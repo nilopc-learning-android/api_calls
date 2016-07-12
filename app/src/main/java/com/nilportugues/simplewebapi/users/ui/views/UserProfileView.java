@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.view;
+package com.nilportugues.simplewebapi.users.ui.views;
 
 
 import android.view.View;

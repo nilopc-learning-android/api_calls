@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.presenter;
+package com.nilportugues.simplewebapi.users.ui.presenters;
 
 import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 

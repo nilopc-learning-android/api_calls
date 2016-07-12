@@ -37,12 +37,13 @@ public class UserListAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
 
-        User user = userList.get(position);
-        View itemView = inflater.inflate(R.layout.activity2_viewpager_item, container, false);
+        View itemView = inflater.inflate(R.layout.users_activity2_viewpager_item, container, false);
 
-        setModelDataToView(user, itemView);
-
-        container.addView(itemView);
+        if (!userList.isEmpty()) {
+            User user = userList.get(position);
+            setModelDataToView(user, itemView);
+            container.addView(itemView);
+        }
 
         return itemView;
     }
