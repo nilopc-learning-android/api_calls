@@ -19,6 +19,6 @@ public class FragmentThree extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        return inflater.inflate(R.layout.users_fragment_three, container, false);
+        return inflater.inflate(R.layout.users_activity3_fragment_three, container, false);
     }
 }

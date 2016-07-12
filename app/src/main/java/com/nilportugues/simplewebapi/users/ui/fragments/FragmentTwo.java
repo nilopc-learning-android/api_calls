@@ -19,6 +19,6 @@ public class FragmentTwo extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        return inflater.inflate(R.layout.users_fragment_two, container, false);
+        return inflater.inflate(R.layout.users_activity3_fragment_two, container, false);
     }
 }
