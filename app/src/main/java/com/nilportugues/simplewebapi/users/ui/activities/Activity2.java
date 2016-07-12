@@ -12,7 +12,7 @@ import com.nilportugues.simplewebapi.shared.executors.UIThread;
 import com.nilportugues.simplewebapi.users.domain.services.GetUsersService;
 import com.nilportugues.simplewebapi.users.interactors.ListUsers;
 import com.nilportugues.simplewebapi.users.repository.model.User;
-import com.nilportugues.simplewebapi.users.ui.adapters.UserListAdapter;
+import com.nilportugues.simplewebapi.users.ui.adapters.pager.UserListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

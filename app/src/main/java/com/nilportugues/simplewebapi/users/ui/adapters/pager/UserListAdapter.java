@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.adapters;
+package com.nilportugues.simplewebapi.users.ui.adapters.pager;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;

@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.adapters;
+package com.nilportugues.simplewebapi.users.ui.adapters.fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

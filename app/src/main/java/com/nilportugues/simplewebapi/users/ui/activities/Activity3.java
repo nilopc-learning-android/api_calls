@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.shared.ui.fragments.SharedBaseFragmentActivity;
-import com.nilportugues.simplewebapi.users.ui.adapters.FragmentAdapter;
+import com.nilportugues.simplewebapi.users.ui.adapters.fragment.FragmentAdapter;
 
 import butterknife.BindView;
 
