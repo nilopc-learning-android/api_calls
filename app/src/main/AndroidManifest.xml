@@ -25,6 +25,10 @@
         <activity android:name=".users.ui.activities.UserSearchActivity" />
         <activity android:name=".users.ui.activities.Activity2" />
         <activity android:name=".users.ui.activities.Activity3" />
+        <activity android:name=".users.ui.activities.tabs.TabsWithTextActivity" />
+        <activity android:name=".users.ui.activities.tabs.TabsWithIconsActivity" />
+        <activity android:name=".users.ui.activities.tabs.TabsWithCustomViewsActivity" />
+        <activity android:name=".users.ui.activities.tabs.TabsScrollableActivity" />
 
     </application>
 

@@ -12,7 +12,7 @@ import butterknife.BindView;
 
 public class Activity3 extends SharedBaseFragmentActivity{
 
-    @BindView(R.id.viewPager) ViewPager viewPager;
+    @BindView(R.id.activity3_view_pager) ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
