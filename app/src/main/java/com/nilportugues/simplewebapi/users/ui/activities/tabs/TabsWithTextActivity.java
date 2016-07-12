@@ -22,8 +22,8 @@ import butterknife.BindView;
 
 public class TabsWithTextActivity extends SharedBaseFragmentActivity {
 
-    @BindView(R.id.tabs_text_view_pager) ViewPager viewPager;
-    @BindView(R.id.tabs_layout) TabLayout tabLayout;
+    @BindView(R.id.tabs1_view_pager) ViewPager viewPager;
+    @BindView(R.id.tabs1_layout) TabLayout tabLayout;
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected List<String> titleList = new ArrayList<>();
@@ -54,7 +54,7 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
     }
 
     protected void buildTabsTitle() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tabs1_toolbar);
         if (toolbar != null) {
             toolbar.setTitle("Text Tabs");
         }
