@@ -18,7 +18,12 @@ import com.nilportugues.simplewebapi.users.ui.fragments.FragmentTwo;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 public class TabsWithTextActivity extends SharedBaseFragmentActivity {
+
+    @BindView(R.id.tabs_text_view_pager) ViewPager viewPager;
+    @BindView(R.id.tabs_layout) TabLayout tabLayout;
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected List<String> titleList = new ArrayList<>();
@@ -26,12 +31,7 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-
+        removeActionBar();
         buildTabs();
     }
 
@@ -40,38 +40,41 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
         return R.layout.users_tabs_text;
     }
 
-    protected void buildTabs() {
-        buildTabsTitle();
-        buildTabsContent();
-
-        ViewPager viewPager = (ViewPager) findViewById(R.id.tabs_text_view_pager);
-
-        TabsWithTextAdapter adapter = new TabsWithTextAdapter(getSupportFragmentManager(), fragmentList, titleList);
-        if (viewPager != null) {
-            viewPager.setAdapter(adapter);
-        }
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs_layout);
-        if (tabLayout != null) {
-            tabLayout.setupWithViewPager(viewPager);
+    protected void removeActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
         }
     }
 
-    private void buildTabsTitle() {
+    protected void buildTabs() {
+        buildTabsTitle();
+        buildTabsContent();
+        buildView();
+    }
+
+    protected void buildTabsTitle() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null) {
             toolbar.setTitle("Text Tabs");
         }
     }
 
-    private void buildTabsContent() {
+    protected void buildTabsContent() {
         this.buildFragment(new FragmentOne(), "ONE");
         this.buildFragment(new FragmentTwo(), "TWO");
         this.buildFragment(new FragmentThree(), "THREE");
     }
 
-    private void buildFragment(Fragment fragment, String title) {
+    protected void buildFragment(Fragment fragment, String title) {
         fragmentList.add(fragment);
         titleList.add(title);
+    }
+
+
+    protected void buildView() {
+        TabsWithTextAdapter adapter = new TabsWithTextAdapter(getSupportFragmentManager(), fragmentList, titleList);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
