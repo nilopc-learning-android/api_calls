@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.activities;
+package com.nilportugues.simplewebapi.users.ui.activities.pager;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import com.nilportugues.simplewebapi.shared.executors.UIThread;
 import com.nilportugues.simplewebapi.users.domain.services.GetUsersService;
 import com.nilportugues.simplewebapi.users.interactors.ListUsers;
 import com.nilportugues.simplewebapi.users.repository.model.User;
+import com.nilportugues.simplewebapi.users.ui.activities.BaseActivity;
 import com.nilportugues.simplewebapi.users.ui.adapters.pager.UserListAdapter;
 
 import java.util.ArrayList;

@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
+import com.nilportugues.simplewebapi.users.ui.activities.fragment.FragmentActivity;
+import com.nilportugues.simplewebapi.users.ui.activities.pager.Activity2;
 import com.nilportugues.simplewebapi.users.ui.activities.tabs.TabsScrollableActivity;
 import com.nilportugues.simplewebapi.users.ui.activities.tabs.TabsWithCustomViewsActivity;
 import com.nilportugues.simplewebapi.users.ui.activities.tabs.TabsWithIconsActivity;
@@ -61,7 +63,7 @@ public class UserSearchActivity extends BaseActivity {
     }
 
     protected void loadActivity3() {
-        activity3.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, Activity3.class)));
+        activity3.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, FragmentActivity.class)));
     }
 
     protected void loadUserAsyncTask() {
