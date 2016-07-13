@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             app:tabGravity="fill"
-            app:tabMode="scrollable"
+            app:tabMode="fixed"
             app:layout_scrollFlags="scroll|enterAlways"
             />
     </android.support.design.widget.AppBarLayout>
