@@ -15,8 +15,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter a userId"
         android:inputType="number"
-        android:text="1"
-        />
+        android:text="1" />
 
     <Button
         android:id="@+id/queryButton"
@@ -43,11 +42,11 @@
             android:id="@+id/results"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:background="#dddddd"
-            android:fillViewport="false"
             android:layout_below="@+id/progressBar"
+            android:layout_toEndOf="@+id/progressBar"
             android:layout_toRightOf="@+id/progressBar"
-            android:layout_toEndOf="@+id/progressBar">
+            android:background="#dddddd"
+            android:fillViewport="false">
 
             <TextView
                 android:id="@+id/responseView"
@@ -57,48 +56,46 @@
     </RelativeLayout>
 
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="ACTIVITY 2"
         android:id="@+id/button2"
-        android:layout_marginTop="25dp" />
-
-    <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="ACTIVITY 3"
+        android:layout_marginTop="25dp"
+        android:text="ACTIVITY 2" />
+
+    <Button
         android:id="@+id/button3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        />
-
+        android:text="ACTIVITY 3" />
 
 
     <Button
-        android:layout_marginTop="20sp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="TABS WITH TEXT"
         android:id="@+id/tabs1"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="TABS WITH ICONS"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20sp"
+        android:text="TABS WITH TEXT" />
+
+    <Button
         android:id="@+id/tabs2"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="SCROLLABLE TABS"
+        android:layout_gravity="center_horizontal"
+        android:text="TABS WITH ICONS" />
+
+    <Button
         android:id="@+id/tabs3"
-        android:layout_gravity="center_horizontal" />
-
-    <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="TABS WITH CUSTOM VIEWS"
+        android:layout_gravity="center_horizontal"
+        android:text="SCROLLABLE TABS" />
+
+    <Button
         android:id="@+id/tabs4"
-        android:layout_gravity="center_horizontal" />
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="TABS WITH CUSTOM VIEWS" />
 </LinearLayout>
