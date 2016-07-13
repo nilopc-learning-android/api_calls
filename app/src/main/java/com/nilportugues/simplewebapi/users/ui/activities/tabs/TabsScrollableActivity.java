@@ -22,8 +22,9 @@ import butterknife.BindView;
 
 public class TabsScrollableActivity extends SharedBaseFragmentActivity {
 
-    @BindView(R.id.tabs1_view_pager) ViewPager viewPager;
-    @BindView(R.id.tabs1_layout) TabLayout tabLayout;
+    @BindView(R.id.tabs3_view_pager) ViewPager viewPager;
+    @BindView(R.id.tabs3_layout) TabLayout tabLayout;
+    @BindView(R.id.tabs3_toolbar) Toolbar toolbar;
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected List<String> titleList = new ArrayList<>();
@@ -54,10 +55,7 @@ public class TabsScrollableActivity extends SharedBaseFragmentActivity {
     }
 
     protected void buildTabsTitle() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tabs1_toolbar);
-        if (toolbar != null) {
-            toolbar.setTitle("Scroll Tabs");
-        }
+        toolbar.setTitle("Scroll Tabs");
     }
 
     protected void buildTabsContent() {

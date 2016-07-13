@@ -24,6 +24,7 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
 
     @BindView(R.id.tabs1_view_pager) ViewPager viewPager;
     @BindView(R.id.tabs1_layout) TabLayout tabLayout;
+    @BindView(R.id.tabs1_toolbar) Toolbar toolbar;
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected List<String> titleList = new ArrayList<>();
@@ -54,10 +55,7 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
     }
 
     protected void buildTabsTitle() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tabs1_toolbar);
-        if (toolbar != null) {
-            toolbar.setTitle("Text Tabs");
-        }
+        toolbar.setTitle("Text Tabs");
     }
 
     protected void buildTabsContent() {

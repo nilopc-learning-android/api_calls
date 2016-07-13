@@ -24,6 +24,7 @@ public class TabsWithIconsActivity extends SharedBaseFragmentActivity {
 
     @BindView(R.id.tabs2_view_pager) ViewPager viewPager;
     @BindView(R.id.tabs2_layout) TabLayout tabLayout;
+    @BindView(R.id.tabs2_toolbar) Toolbar toolbar;
 
     protected List<Fragment> fragmentList = new ArrayList<>();
 
@@ -53,10 +54,7 @@ public class TabsWithIconsActivity extends SharedBaseFragmentActivity {
     }
 
     protected void buildTabsTitle() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tabs2_toolbar);
-        if (toolbar != null) {
-            toolbar.setTitle("Icon Tabs");
-        }
+        toolbar.setTitle("Icon Tabs");
     }
 
     protected void buildTabsContent() {
