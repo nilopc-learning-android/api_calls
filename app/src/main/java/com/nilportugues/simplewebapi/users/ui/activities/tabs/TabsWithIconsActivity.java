@@ -77,9 +77,9 @@ public class TabsWithIconsActivity extends SharedBaseFragmentActivity {
     }
 
     protected void setTabIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.background_splash);
-        tabLayout.getTabAt(1).setIcon(R.drawable.background_splash);
-        tabLayout.getTabAt(2).setIcon(R.drawable.background_splash);
+        tabLayout.getTabAt(0).setIcon(R.drawable.i001);
+        tabLayout.getTabAt(1).setIcon(R.drawable.i004);
+        tabLayout.getTabAt(2).setIcon(R.drawable.i007);
 
     }
 }
