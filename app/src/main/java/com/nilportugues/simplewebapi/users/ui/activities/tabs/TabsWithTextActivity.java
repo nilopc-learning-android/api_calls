@@ -59,9 +59,9 @@ public class TabsWithTextActivity extends SharedBaseFragmentActivity {
     }
 
     protected void buildTabsContent() {
-        this.buildFragment(new FragmentOne(), "ONE");
-        this.buildFragment(new FragmentTwo(), "TWO");
-        this.buildFragment(new FragmentThree(), "THREE");
+        this.buildFragment(new FragmentOne(), "Bulbasaur");
+        this.buildFragment(new FragmentTwo(), "Charmander");
+        this.buildFragment(new FragmentThree(), "Squirtle");
     }
 
     protected void buildFragment(Fragment fragment, String title) {
