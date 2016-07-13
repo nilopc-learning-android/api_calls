@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            app:titleTextColor="@android:color/white"
             app:layout_scrollFlags="scroll|enterAlways" />
 
         <!-- MUST BE BEFORE VIEWPAGER -->
@@ -25,6 +26,8 @@
             app:tabGravity="fill"
             app:tabMode="fixed"
             app:layout_scrollFlags="scroll|enterAlways"
+            app:tabTextColor="@android:color/white"
+            app:tabSelectedTextColor="@color/colorAccent"
             />
     </android.support.design.widget.AppBarLayout>
 
