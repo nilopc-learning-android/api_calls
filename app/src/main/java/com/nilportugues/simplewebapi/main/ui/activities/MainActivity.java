@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.nilportugues.simplewebapi.users.ui.activities.UserSearchActivity;
+import com.nilportugues.simplewebapi.users.ui.usersearch.UserSearchActivity;
 
 public class MainActivity extends Activity {
     @Override

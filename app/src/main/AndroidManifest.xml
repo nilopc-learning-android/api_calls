@@ -22,13 +22,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".users.ui.activities.UserSearchActivity" />
-        <activity android:name=".users.ui.activities.pager.Activity2" />
-        <activity android:name=".users.ui.activities.fragment.FragmentActivity" />
-        <activity android:name=".users.ui.activities.tabs.TabsWithTextActivity" />
-        <activity android:name=".users.ui.activities.tabs.TabsWithIconsActivity" />
-        <activity android:name=".users.ui.activities.tabs.TabsWithCustomViewsActivity" />
-        <activity android:name=".users.ui.activities.tabs.TabsScrollableActivity" />
+        <activity android:name=".users.ui.usersearch.UserSearchActivity" />
+        <activity android:name=".users.ui.userpager.Activity2" />
+        <activity android:name=".users.ui.userfragmentview.FragmentActivity" />
+        <activity android:name=".users.ui.usetabstext.TabsWithTextActivity" />
+        <activity android:name=".users.ui.usertabsicons.TabsWithIconsActivity" />
+        <activity android:name=".users.ui.usertabscustomview.TabsWithCustomViewsActivity" />
+        <activity android:name=".users.ui.usertabsscrollable.TabsScrollableActivity" />
 
     </application>
 
