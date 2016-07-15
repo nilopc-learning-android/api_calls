@@ -10,19 +10,16 @@ import rx.subscriptions.Subscriptions;
 
 
 public abstract class UseCase {
-    private final PostExecutionThread postExecutionThread;
-    private final BackgroundThread backgroundThread;
     protected Subscription subscription = Subscriptions.empty();
-
-    public UseCase(PostExecutionThread postExecutionThread, BackgroundThread backgroundThread) {
-        this.postExecutionThread = postExecutionThread;
-        this.backgroundThread = backgroundThread;
-    }
 
     protected abstract Observable buildUseCaseObservable();
 
     @SuppressWarnings("unchecked")
-    public void execute(Subscriber subscriber) {
+    public void execute(
+            PostExecutionThread postExecutionThread,
+            BackgroundThread backgroundThread,
+            Subscriber subscriber
+    ) {
         this.subscription = this.buildUseCaseObservable()
                 .subscribeOn(backgroundThread.getScheduler())
                 .observeOn(postExecutionThread.getScheduler())

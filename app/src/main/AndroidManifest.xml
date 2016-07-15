@@ -23,7 +23,7 @@
         </activity>
 
         <activity android:name=".users.ui.usersearch.UserSearchActivity" />
-        <activity android:name=".users.ui.userlist.Activity2" />
+        <activity android:name=".users.ui.userpagerlist.UserListActivity" />
         <activity android:name=".users.ui.userfragmentview.FragmentActivity" />
         <activity android:name=".users.ui.usetabstext.TabsWithTextActivity" />
         <activity android:name=".users.ui.usertabsicons.TabsWithIconsActivity" />

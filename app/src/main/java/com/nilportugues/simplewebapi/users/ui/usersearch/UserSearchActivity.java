@@ -11,7 +11,7 @@ import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 import com.nilportugues.simplewebapi.users.ui.BaseActivity;
 import com.nilportugues.simplewebapi.users.ui.userfragmentview.FragmentActivity;
-import com.nilportugues.simplewebapi.users.ui.userlist.Activity2;
+import com.nilportugues.simplewebapi.users.ui.userpagerlist.UserListActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsscrollable.TabsScrollableActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabscustomview.TabsWithCustomViewsActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsicons.TabsWithIconsActivity;
@@ -60,7 +60,7 @@ public class UserSearchActivity extends BaseActivity {
     }
 
     protected void loadActivity2() {
-        activity2.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, Activity2.class)));
+        activity2.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, UserListActivity.class)));
     }
 
     protected void loadActivity3() {

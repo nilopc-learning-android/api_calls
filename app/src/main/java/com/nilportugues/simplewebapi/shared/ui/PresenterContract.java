@@ -4,6 +4,7 @@ public interface PresenterContract {
 
     void subscribe();
 
-    void unsubscribe();
+
+    void unsubscribe() ;
 
 }

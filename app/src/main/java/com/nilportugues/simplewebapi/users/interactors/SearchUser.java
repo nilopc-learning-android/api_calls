@@ -15,12 +15,10 @@ public class SearchUser extends UseCase {
     private final UserId userId;
 
     public SearchUser(
-            PostExecutionThread postExecutionThread,
-            BackgroundThread backgroundThread,
             GetUserService userDataQuery,
             UserId email
     ) {
-        super(postExecutionThread, backgroundThread);
+
         this.userDataQuery = userDataQuery;
         this.userId = email;
     }

@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.userlist;
+package com.nilportugues.simplewebapi.users.ui.userpagerlist;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -49,17 +49,14 @@ public class UserListAdapter extends PagerAdapter {
     }
 
     private void setModelDataToView(User user, View itemView) {
-
         TextView userIdView = (TextView) itemView.findViewById(R.id.userId);
-        userIdView.setText(user.getId().toString());
-
         TextView emailView = (TextView) itemView.findViewById(R.id.email);
-        emailView.setText(user.getEmail().toString());
-
         TextView nameView = (TextView) itemView.findViewById(R.id.name);
-        nameView.setText(user.getName().toString());
-
         TextView userNameTextView = (TextView) itemView.findViewById(R.id.userName);
+
+        userIdView.setText(user.getId().toString());
+        emailView.setText(user.getEmail().toString());
+        nameView.setText(user.getName().toString());
         userNameTextView.setText(user.getUsername().toString());
     }
 

@@ -38,8 +38,8 @@ public class UserProfileView implements View.OnClickListener{
             userId = new UserId(userIdField.getText().toString());
         }
 
-        SearchUser searchUser = new SearchUser(new UIThread(), new IOThread(), userDataQuery, userId);
-        searchUser.execute(new SearchUserSubscriber());
+        SearchUser searchUser = new SearchUser(userDataQuery, userId);
+        searchUser.execute(new UIThread(), new IOThread(), new SearchUserSubscriber());
     }
 
     protected class SearchUserSubscriber extends Subscriber<User> {
