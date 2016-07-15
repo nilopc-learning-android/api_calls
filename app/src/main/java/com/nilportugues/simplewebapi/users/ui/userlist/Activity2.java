@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.userpager;
+package com.nilportugues.simplewebapi.users.ui.userlist;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import com.nilportugues.simplewebapi.users.domain.services.GetUsersService;
 import com.nilportugues.simplewebapi.users.interactors.ListUsers;
 import com.nilportugues.simplewebapi.users.repository.model.User;
 import com.nilportugues.simplewebapi.users.ui.BaseActivity;
-import com.nilportugues.simplewebapi.users.ui.userlist.UserListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,8 +43,6 @@ public class Activity2 extends BaseActivity {
     }
 
     private void loadUserListAdapter() {
-
-
         ListUsers listUsers = new ListUsers(new UIThread(), new IOThread(), getUsersService);
         listUsers.execute(new ListUsersSubscriber());
     }

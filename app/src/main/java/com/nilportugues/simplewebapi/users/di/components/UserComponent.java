@@ -3,7 +3,7 @@ package com.nilportugues.simplewebapi.users.di.components;
 import com.nilportugues.simplewebapi.users.di.modules.ApiModule;
 import com.nilportugues.simplewebapi.users.di.modules.DomainServiceModule;
 import com.nilportugues.simplewebapi.users.di.modules.RepositoryModule;
-import com.nilportugues.simplewebapi.users.ui.userpager.Activity2;
+import com.nilportugues.simplewebapi.users.ui.userlist.Activity2;
 import com.nilportugues.simplewebapi.users.ui.usersearch.UserSearchActivity;
 
 import javax.inject.Singleton;

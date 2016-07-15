@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.shared.ui.SharedBaseFragmentActivity;
+import com.nilportugues.simplewebapi.shared.ui.BaseFragmentActivity;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentOne;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentThree;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentTwo;
@@ -22,7 +22,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class TabsWithCustomViewsActivity extends SharedBaseFragmentActivity {
+public class TabsWithCustomViewsActivity extends BaseFragmentActivity {
 
     @BindView(R.id.tabs1_view_pager) ViewPager viewPager;
     @BindView(R.id.tabs1_layout) TabLayout tabLayout;

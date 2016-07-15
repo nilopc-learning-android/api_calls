@@ -9,7 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.shared.ui.SharedBaseFragmentActivity;
+import com.nilportugues.simplewebapi.shared.ui.BaseFragmentActivity;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentOne;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentThree;
 import com.nilportugues.simplewebapi.users.ui.userpager.FragmentTwo;
@@ -19,7 +19,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class TabsWithIconsActivity extends SharedBaseFragmentActivity {
+public class TabsWithIconsActivity extends BaseFragmentActivity {
 
     @BindView(R.id.tabs2_view_pager) ViewPager viewPager;
     @BindView(R.id.tabs2_layout) TabLayout tabLayout;

@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.shared.ui.SharedBaseFragmentActivity;
+import com.nilportugues.simplewebapi.shared.ui.BaseFragmentActivity;
 
 import butterknife.BindView;
 
-public class FragmentActivity extends SharedBaseFragmentActivity{
+public class FragmentActivity extends BaseFragmentActivity {
 
     @BindView(R.id.activity3_view_pager) ViewPager viewPager;
 

@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.main.ui.activities;
+package com.nilportugues.simplewebapi.main.ui;
 
 import android.app.Activity;
 import android.content.Intent;

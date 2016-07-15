@@ -1,12 +1,13 @@
 package com.nilportugues.simplewebapi.shared.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 
 
-abstract public class SharedBaseActivity extends Activity {
+public abstract class BaseFragmentActivity extends AppCompatActivity
+{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

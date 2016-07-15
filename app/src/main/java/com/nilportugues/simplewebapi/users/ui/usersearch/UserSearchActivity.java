@@ -11,7 +11,7 @@ import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 import com.nilportugues.simplewebapi.users.ui.BaseActivity;
 import com.nilportugues.simplewebapi.users.ui.userfragmentview.FragmentActivity;
-import com.nilportugues.simplewebapi.users.ui.userpager.Activity2;
+import com.nilportugues.simplewebapi.users.ui.userlist.Activity2;
 import com.nilportugues.simplewebapi.users.ui.usertabsscrollable.TabsScrollableActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabscustomview.TabsWithCustomViewsActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsicons.TabsWithIconsActivity;
