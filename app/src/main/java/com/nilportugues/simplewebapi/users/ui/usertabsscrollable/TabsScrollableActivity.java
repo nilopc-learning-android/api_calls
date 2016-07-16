@@ -2,35 +2,32 @@ package com.nilportugues.simplewebapi.users.ui.usertabsscrollable;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
+import android.widget.ProgressBar;
 
 import com.nilportugues.simplewebapi.R;
-import com.nilportugues.simplewebapi.shared.ui.BaseFragmentActivity;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentOne;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentThree;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentTwo;
+import com.nilportugues.simplewebapi.users.interactors.UserPokemonList;
+import com.nilportugues.simplewebapi.users.ui.BaseFragmentActivity;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.inject.Inject;
 
 import butterknife.BindView;
 
 
 public class TabsScrollableActivity extends BaseFragmentActivity {
 
+    @Inject UserPokemonList interactor;
     @BindView(R.id.tabs3_view_pager) ViewPager viewPager;
     @BindView(R.id.tabs3_layout) TabLayout tabLayout;
     @BindView(R.id.tabs3_toolbar) Toolbar toolbar;
-
-    protected List<Fragment> fragmentList = new ArrayList<>();
-    protected List<String> titleList = new ArrayList<>();
+    @BindView(R.id.tabs3_progressbar) ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getComponent().inject(this);
         removeActionBar();
         buildTabs();
     }
@@ -48,34 +45,15 @@ public class TabsScrollableActivity extends BaseFragmentActivity {
     }
 
     protected void buildTabs() {
-        buildTabsTitle();
-        buildTabsContent();
-        buildView();
-    }
+        TabsScrollableView view = new TabsScrollableView(
+                getSupportFragmentManager(),
+                viewPager,
+                tabLayout,
+                toolbar,
+                progressBar
+        );
 
-    protected void buildTabsTitle() {
-        toolbar.setTitle("Scroll Tabs");
-    }
-
-    protected void buildTabsContent() {
-        this.buildFragment(new FragmentOne(), "ONE");
-        this.buildFragment(new FragmentTwo(), "TWO");
-        this.buildFragment(new FragmentThree(), "THREE");
-        this.buildFragment(new FragmentThree(), "FOUR");
-        this.buildFragment(new FragmentThree(), "FIVE");
-        this.buildFragment(new FragmentThree(), "SIX");
-        this.buildFragment(new FragmentThree(), "SEVEN");
-    }
-
-    protected void buildFragment(Fragment fragment, String title) {
-        fragmentList.add(fragment);
-        titleList.add(title);
-    }
-
-
-    protected void buildView() {
-        TabsScrollAdapter adapter = new TabsScrollAdapter(getSupportFragmentManager(), fragmentList, titleList);
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        TabsScrollablePresenter presenter = new TabsScrollablePresenter(interactor, view);
+        presenter.subscribe();
     }
 }

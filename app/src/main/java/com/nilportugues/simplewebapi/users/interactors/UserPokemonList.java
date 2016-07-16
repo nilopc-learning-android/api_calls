@@ -21,6 +21,12 @@ public class UserPokemonList extends UseCase {
                     pokemon.add("Bulbasaur");
                     pokemon.add("Charmander");
                     pokemon.add("Squirtle");
+                    pokemon.add("Caterpie");
+                    pokemon.add("Weedle");
+                    pokemon.add("Pidgey");
+                    pokemon.add("Spearow");
+                    pokemon.add("Sandshrew");
+                    pokemon.add("Pikachu");
 
                     subscriber.onNext(pokemon);
                     subscriber.onCompleted();
