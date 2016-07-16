@@ -22,17 +22,6 @@
 - https://github.com/realm/realm-java/tree/master/examples/rxJavaExample
 - https://github.com/realm/realm-java/blob/master/examples/rxJavaExample/src/main/java/io/realm/examples/rxjava/gotchas/GotchasActivity.java
 
-## Working with views
-
- - Activity or Fragment
-     - Recibe: Presenter
-     - setea/esconde/muestra Fragments
-     
- - Presenter:
-    - Recibe: UseCase
-    - Recibe: UserModelDataMapper
-    - Internamente implementa:
-        - private final class xxxSubscriber extends Rx.Subscriber
 
 ## Glide para cargar imagenes
 
@@ -68,6 +57,8 @@ https://github.com/afollestad/material-dialogs
 - https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/cache/UserCache.java
 - https://github.com/android10/Android-CleanArchitecture/blob/master/data/src/main/java/com/fernandocejas/android10/sample/data/cache/UserCacheImpl.java
 
+---
+
 # Done:
 
 - Stop weird refreshing. Remove progressbar status right having UI elements populated.
@@ -96,12 +87,20 @@ https://github.com/afollestad/material-dialogs
 - Added ButterKnife for UI related: https://github.com/JakeWharton/butterknife
 
 
+## Working with views
 
-----------
+ - Activity or Fragment
+     - Recibe: Presenter
+     - setea/esconde/muestra Fragments
+     
+ - Presenter:
+    - Recibe: UseCase
+    - Recibe: UserModelDataMapper
+    - Internamente implementa:
+        - private final class xxxSubscriber extends Rx.Subscriber
 
-# VIEWS
 
-#### PageAdapter vs FragmentPagerAdapter vs FragmentStatePagerAdapter
+## PageAdapter vs FragmentPagerAdapter vs FragmentStatePagerAdapter
 
  - `FragmentPagerAdapter`
     - Fragments are detached, NOT destroyed.
