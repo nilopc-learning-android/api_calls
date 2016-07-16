@@ -48,31 +48,26 @@ public class UserListPresenter implements UserListContract.Presenter {
     @Override
     public void subscribe() {
         showLoading(true);
-        mInteractor.execute(new UIThread(), new IOThread(), new UserListSubscriber());
+        mInteractor.execute(new UIThread(), new IOThread(), new Subscriber<List<User>>() {
+            @Override
+            public void onCompleted() {
+                showList(true);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                showList(false);
+            }
+
+            @Override
+            public void onNext(List<User> users) {
+                setUserList(users);
+            }
+        });
     }
 
     @Override
     public void unsubscribe() {
         mInteractor.unsubscribe();
-    }
-
-    /**
-     * Controls the logic of the presenter based on the use-case behavior.
-     */
-    protected class UserListSubscriber extends Subscriber<List<User>> {
-        @Override
-        public void onCompleted() {
-            showList(true);
-        }
-
-        @Override
-        public void onError(Throwable e) {
-            showList(false);
-        }
-
-        @Override
-        public void onNext(List<User> users) {
-            setUserList(users);
-        }
     }
 }
