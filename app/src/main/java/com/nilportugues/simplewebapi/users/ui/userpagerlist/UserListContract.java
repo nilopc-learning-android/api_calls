@@ -11,20 +11,20 @@ public interface UserListContract {
 
     interface Presenter extends PresenterContract
     {
-        void showLoadingIndicator(boolean active);
+        void showLoading(boolean active);
 
         void setUserList(List<User> userList);
 
-        void showResults(boolean complete);
+        void showList(boolean complete);
     }
 
     interface View extends ViewContract<Presenter>{
 
         void showLoading();
 
-        void setList(List<User> userList);
-
         void hideLoading();
+
+        void setUserList(List<User> userList);
 
         void showList();
 

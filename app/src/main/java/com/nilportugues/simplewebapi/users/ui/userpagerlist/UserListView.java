@@ -31,7 +31,7 @@ public class UserListView implements UserListContract.View {
     }
 
     @Override
-    public void setList(List<User> userList) {
+    public void setUserList(List<User> userList) {
         mUserList = userList;
     }
 
@@ -54,6 +54,6 @@ public class UserListView implements UserListContract.View {
 
     @Override
     public void setPresenter(final UserListContract.Presenter presenter) {
-        this.mPresenter = presenter;
+        mPresenter = presenter;
     }
 }

@@ -22,11 +22,11 @@ public class UserListPresenter implements UserListContract.Presenter {
 
     @Override
     public void setUserList(List<User> userList) {
-        mUserListView.setList(userList);
+        mUserListView.setUserList(userList);
     }
 
     @Override
-    public void showLoadingIndicator(boolean active) {
+    public void showLoading(boolean active) {
         if (active) {
             mUserListView.showLoading();
             return;
@@ -35,8 +35,8 @@ public class UserListPresenter implements UserListContract.Presenter {
     }
 
     @Override
-    public void showResults(boolean complete) {
-        showLoadingIndicator(false);
+    public void showList(boolean complete) {
+        showLoading(false);
 
         if (complete) {
             mUserListView.showList();
@@ -47,6 +47,7 @@ public class UserListPresenter implements UserListContract.Presenter {
 
     @Override
     public void subscribe() {
+        showLoading(true);
         mInteractor.execute(new UIThread(), new IOThread(), new UserListSubscriber());
     }
 
@@ -61,12 +62,12 @@ public class UserListPresenter implements UserListContract.Presenter {
     protected class UserListSubscriber extends Subscriber<List<User>> {
         @Override
         public void onCompleted() {
-            showResults(true);
+            showList(true);
         }
 
         @Override
         public void onError(Throwable e) {
-            showResults(false);
+            showList(false);
         }
 
         @Override
