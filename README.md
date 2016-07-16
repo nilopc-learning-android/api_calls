@@ -63,31 +63,31 @@ https://github.com/afollestad/material-dialogs
 
 - Stop weird refreshing. Remove progressbar status right having UI elements populated.
 
-**UseCases**
+### UseCases
 
 - https://github.com/android10/Android-CleanArchitecture/blob/master/domain/src/main/java/com/fernandocejas/android10/sample/domain/interactor/UseCase.java
 - UseCase with RxJava
 
-**RxJava and RxAndroid**
+### RxJava and RxAndroid
 
 - Drop AsyncTask por Rx
 - https://github.com/nilopc-learning-android/EffectiveAndroidUI 
 - http://blog.danlew.net/2014/09/15/grokking-rxjava-part-1/
 - http://akarnokd.blogspot.com.es/
 
-**Retrofit**
+### Retrofit
 
 - Easy API endpoint data access.
 - To generate POJOs: http://www.jsonschema2pojo.org/
 - Observables
 
-**Add DependencyInjecion**
+### Add DependencyInjecion
 
 - Added Dagger2 for non UI related
 - Added ButterKnife for UI related: https://github.com/JakeWharton/butterknife
 
 
-## Working with views
+### Working with views
 
  - Activity or Fragment
      - Recibe: Presenter
@@ -100,7 +100,7 @@ https://github.com/afollestad/material-dialogs
         - private final class xxxSubscriber extends Rx.Subscriber
 
 
-## PageAdapter vs FragmentPagerAdapter vs FragmentStatePagerAdapter
+### PageAdapter vs FragmentPagerAdapter vs FragmentStatePagerAdapter
 
  - `FragmentPagerAdapter`
     - Fragments are detached, NOT destroyed.
