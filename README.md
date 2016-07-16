@@ -1,42 +1,43 @@
-## Retrofit factory
+# Todo:
 
-## Permissions on demand
+### Retrofit factory
+
+### Permissions on demand
 - https://github.com/Karumi/Dexter
 
 
-## Network status
+### Network status
 
 - Do not call api is no internet and not un cache
 - https://github.com/nilopc-learning-android/ZhiHuDaily/blob/master/app/src/main/java/com/marktony/zhihudaily/Utils/NetworkState.java
 
-## Social login
+### Social login
 
 - https://github.com/FuckBoilerplate/RxSocialConnect-Android/blob/master/app/src/main/java/org/fuckboilerplate/rxsocialconnect/connections/ConnectionsFragment.java
 
-## API Calls cache with RxCache
+### API Calls cache with RxCache
 
 - https://github.com/VictorAlbertos/RxCacheSamples/blob/master/sample_data/src/main/java/sample_data/Repository.java
 
-## Realm for local storage database.
+### Realm for local storage database.
 
 - https://github.com/realm/realm-java/tree/master/examples/rxJavaExample
 - https://github.com/realm/realm-java/blob/master/examples/rxJavaExample/src/main/java/io/realm/examples/rxjava/gotchas/GotchasActivity.java
 
 
-## Glide para cargar imagenes
+### Glide para cargar imagenes
 
 - https://github.com/bumptech/glide
 
-## Picaso para cacheo de imagenes
+### Picaso para cacheo de imagenes
 Images add much-needed context and visual flair to Android applications. Picasso allows for hassle-free image loading in your application—often in one line of code!
 
-## Dialogs
+### Dialogs
 
 https://github.com/afollestad/material-dialogs
 
 ---
 
-# Todo:
 
 **Testing**
 
