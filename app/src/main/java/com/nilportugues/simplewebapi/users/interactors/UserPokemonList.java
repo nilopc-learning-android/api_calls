@@ -22,7 +22,6 @@ public class UserPokemonList extends UseCase {
                     pokemon.add("Charmander");
                     pokemon.add("Squirtle");
 
-
                     subscriber.onNext(pokemon);
                     subscriber.onCompleted();
                 }
