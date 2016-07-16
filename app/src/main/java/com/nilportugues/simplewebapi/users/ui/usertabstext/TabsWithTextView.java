@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.usetabstext;
+package com.nilportugues.simplewebapi.users.ui.usertabstext;
 
 
 import android.support.design.widget.TabLayout;
@@ -8,9 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.widget.ProgressBar;
 
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentOne;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentThree;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentTwo;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentOne;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentThree;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentTwo;
 
 import java.util.ArrayList;
 import java.util.List;

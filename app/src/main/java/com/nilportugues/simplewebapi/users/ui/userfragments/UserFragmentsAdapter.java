@@ -1,17 +1,17 @@
-package com.nilportugues.simplewebapi.users.ui.userfragmentview;
+package com.nilportugues.simplewebapi.users.ui.userfragments;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentOne;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentThree;
-import com.nilportugues.simplewebapi.users.ui.userpager.FragmentTwo;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentOne;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentThree;
+import com.nilportugues.simplewebapi.users.ui.fragments.FragmentTwo;
 
 
-public class FragmentAdapter extends FragmentStatePagerAdapter
+public class UserFragmentsAdapter extends FragmentStatePagerAdapter
 {
-    public FragmentAdapter(FragmentManager fm) {
+    public UserFragmentsAdapter(FragmentManager fm) {
         super(fm);
     }
 

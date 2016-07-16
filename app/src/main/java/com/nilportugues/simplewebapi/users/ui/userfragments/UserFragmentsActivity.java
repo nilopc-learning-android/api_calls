@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.userfragmentview;
+package com.nilportugues.simplewebapi.users.ui.userfragments;
 
 
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import com.nilportugues.simplewebapi.shared.ui.BaseFragmentActivity;
 
 import butterknife.BindView;
 
-public class FragmentActivity extends BaseFragmentActivity {
+public class UserFragmentsActivity extends BaseFragmentActivity {
 
     @BindView(R.id.activity3_view_pager) ViewPager viewPager;
 
@@ -25,7 +25,7 @@ public class FragmentActivity extends BaseFragmentActivity {
     }
 
     private void loadViewPager() {
-        FragmentAdapter adapter = new FragmentAdapter(getSupportFragmentManager());
+        UserFragmentsAdapter adapter = new UserFragmentsAdapter(getSupportFragmentManager());
         if (viewPager != null) {
             viewPager.setAdapter(adapter);
         }

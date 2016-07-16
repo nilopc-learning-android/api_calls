@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.userpager;
+package com.nilportugues.simplewebapi.users.ui.fragments;
 
 import com.nilportugues.simplewebapi.R;
 

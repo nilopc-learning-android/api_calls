@@ -1,4 +1,4 @@
-package com.nilportugues.simplewebapi.users.ui.usetabstext;
+package com.nilportugues.simplewebapi.users.ui.usertabstext;
 
 
 import android.os.Bundle;

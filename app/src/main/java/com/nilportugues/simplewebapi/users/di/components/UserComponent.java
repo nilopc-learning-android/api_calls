@@ -7,7 +7,7 @@ import com.nilportugues.simplewebapi.users.di.modules.RepositoryModule;
 import com.nilportugues.simplewebapi.users.ui.userpagerlist.UserListActivity;
 import com.nilportugues.simplewebapi.users.ui.usersearch.UserSearchActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsscrollable.TabsScrollableActivity;
-import com.nilportugues.simplewebapi.users.ui.usetabstext.TabsWithTextActivity;
+import com.nilportugues.simplewebapi.users.ui.usertabstext.TabsWithTextActivity;
 
 import javax.inject.Singleton;
 
