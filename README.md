@@ -1,3 +1,13 @@
+GUAU:
+- https://github.com/nilopc-learning-android/android-examples
+- http://hannesdorfmann.com/android/evolution-of-the-repository-pattern
+
+THIS IS HUGE:
+- https://github.com/nisrulz/android-utils/tree/9158112f92c451d5c72e1c4c4ce87477000f1910/TestProjectForScripts/scripts/src/main/java/github/nisrulz/scripts
+
+CUSTOM VIEWS: 
+- https://corner.squareup.com/2014/10/advocating-against-android-fragments.html
+
 # Todo:
 
 ### Retrofit factory
