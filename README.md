@@ -1,3 +1,5 @@
+GUAU: https://github.com/nilopc-learning-android/android-examples
+
 # Todo:
 
 ### Retrofit factory
