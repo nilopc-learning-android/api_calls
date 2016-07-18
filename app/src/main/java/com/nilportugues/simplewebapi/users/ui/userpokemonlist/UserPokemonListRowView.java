@@ -10,12 +10,20 @@ public class UserPokemonListRowView
     private TextView name;
     private TextView typeOne;
     private TextView typeTwo;
+    private TextView number;
 
-    public UserPokemonListRowView(ImageView artwork, TextView name, TextView typeOne, TextView typeTwo) {
+    public UserPokemonListRowView(
+            ImageView artwork,
+            TextView name,
+            TextView typeOne,
+            TextView typeTwo,
+            TextView number
+    ) {
         this.artwork = artwork;
         this.name = name;
         this.typeOne = typeOne;
         this.typeTwo = typeTwo;
+        this.number = number;
     }
 
     public ImageView getArtwork() {
@@ -24,6 +32,9 @@ public class UserPokemonListRowView
 
     public TextView getName() {
         return name;
+    }
+    public TextView getNumber() {
+        return number;
     }
 
     public TextView getTypeOne() {

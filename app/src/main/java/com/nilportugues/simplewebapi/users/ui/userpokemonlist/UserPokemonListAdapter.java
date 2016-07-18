@@ -60,7 +60,8 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
                 (ImageView) convertView.findViewById(R.id.pokemonListArtwork),
                 (TextView) convertView.findViewById(R.id.pokemonListName),
                 (TextView) convertView.findViewById(R.id.pokemonListTypeOne),
-                (TextView) convertView.findViewById(R.id.pokemonListTypeTwo)
+                (TextView) convertView.findViewById(R.id.pokemonListTypeTwo),
+                (TextView) convertView.findViewById(R.id.pokemonListNumber)
         );
     }
 
@@ -72,6 +73,9 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
         rowView.getName().setText(pokemon.getPokemonName());
         rowView.getTypeOne().setText(pokemon.getTypeOne());
         rowView.getTypeTwo().setText(pokemon.getTypeTwo());
+        rowView.getNumber().setText(String.format("#%03d", pokemon.getPokemonNumber()));
+
+        Log.i("NUM", rowView.getNumber().getText().toString());
     }
 
     private int getResourceFromPokemon(PokemonEntry pokemon) {

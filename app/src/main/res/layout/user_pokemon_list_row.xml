@@ -27,13 +27,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:elevation="1dp"
             android:paddingStart="100dp"
             android:paddingTop="10dp"
             android:singleLine="false"
             android:text="Bulbasaur"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="26dp"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -46,7 +45,7 @@
             android:layout_marginLeft="100dp"
             android:weightSum="10"
             android:layout_marginTop="40dp"
-            >
+            android:id="@+id/tableRow">
 
             <TextView
                 android:textColor="@color/colorPrimary"
@@ -78,6 +77,29 @@
             />
 
         </TableRow>
+
+        <TextView
+            android:id="@+id/pokemonListNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="001"
+            android:layout_alignBottom="@+id/tableRow"
+            android:layout_alignRight="@+id/tableRow"
+            android:layout_alignEnd="@+id/tableRow"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:textSize="40sp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="18dp"
+            android:textColor="#aaaaaa"
+            android:alpha="0.4"
+            android:textStyle="italic"
+            android:paddingBottom="0dp" />
     </RelativeLayout>
 
 
