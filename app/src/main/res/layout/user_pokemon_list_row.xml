@@ -22,6 +22,7 @@
 
 
         <TextView
+            android:textColor="@color/colorPrimary"
             android:id="@+id/pokemonListName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,32 +39,45 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:layout_marginLeft="100dp"
+            android:weightSum="10"
+            android:layout_marginTop="40dp"
+            >
+
+            <TextView
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/pokemonListTypeOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:singleLine="false"
+                android:text="Grass"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/pokemonListName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
         <TextView
+            android:textColor="@color/colorPrimary"
             android:id="@+id/pokemonListTypeTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="80dp"
             android:singleLine="false"
             android:text="Poison"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textStyle="bold"
             android:layout_alignTop="@+id/pokemonListTypeOne"
             android:layout_alignRight="@+id/pokemonListName"
-            android:layout_alignEnd="@+id/pokemonListName" />
-
-        <TextView
-            android:id="@+id/pokemonListTypeOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingStart="100dp"
-            android:singleLine="false"
-            android:text="Grass"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_alignEnd="@+id/pokemonListName"
             android:textStyle="bold"
-            android:layout_below="@+id/pokemonListName"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:textAlignment="textStart"
+            />
+
+        </TableRow>
     </RelativeLayout>
 
 
