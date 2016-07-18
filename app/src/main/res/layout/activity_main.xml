@@ -98,4 +98,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="TABS WITH CUSTOM VIEWS" />
+
+    <Button
+        android:id="@+id/pokemon_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="POKEMON LIST" />
 </LinearLayout>

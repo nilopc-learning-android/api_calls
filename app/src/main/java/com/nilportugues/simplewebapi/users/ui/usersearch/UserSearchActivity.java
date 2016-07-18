@@ -12,6 +12,7 @@ import com.nilportugues.simplewebapi.users.domain.services.GetUserService;
 import com.nilportugues.simplewebapi.users.ui.BaseActivity;
 import com.nilportugues.simplewebapi.users.ui.userfragments.UserFragmentsActivity;
 import com.nilportugues.simplewebapi.users.ui.userpagerlist.UserListActivity;
+import com.nilportugues.simplewebapi.users.ui.userpokemonlist.UserPokemonListActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsscrollable.TabsScrollableActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabscustomview.TabsWithCustomViewsActivity;
 import com.nilportugues.simplewebapi.users.ui.usertabsicons.TabsWithIconsActivity;
@@ -37,6 +38,7 @@ public class UserSearchActivity extends BaseActivity {
     @BindView(R.id.tabs2) Button tabs2;
     @BindView(R.id.tabs3) Button tabs3;
     @BindView(R.id.tabs4) Button tabs4;
+    @BindView(R.id.pokemon_list) Button pokemonList;
 
 
     @Override
@@ -51,6 +53,7 @@ public class UserSearchActivity extends BaseActivity {
         loadActivityTabs2();
         loadActivityTabs3();
         loadActivityTabs4();
+        loadUserPokemonList();
     }
 
 
@@ -87,4 +90,7 @@ public class UserSearchActivity extends BaseActivity {
         tabs4.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, TabsWithCustomViewsActivity.class)));
     }
 
+    protected void loadUserPokemonList() {
+        pokemonList.setOnClickListener(view -> startActivity(new Intent(UserSearchActivity.this, UserPokemonListActivity.class)));
+    }
 }

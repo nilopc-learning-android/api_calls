@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/pokemonListArtwork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:adjustViewBounds="true"
+            android:maxHeight="98dp"
+            android:maxWidth="98dp"
+            android:nestedScrollingEnabled="false"
+            android:src="@drawable/p001"
+            android:textAlignment="textStart" />
+
+
+        <TextView
+            android:id="@+id/pokemonListName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:elevation="1dp"
+            android:paddingStart="100dp"
+            android:paddingTop="10dp"
+            android:singleLine="false"
+            android:text="Bulbasaur"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/pokemonListTypeTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="80dp"
+            android:singleLine="false"
+            android:text="Poison"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:layout_alignTop="@+id/pokemonListTypeOne"
+            android:layout_alignRight="@+id/pokemonListName"
+            android:layout_alignEnd="@+id/pokemonListName" />
+
+        <TextView
+            android:id="@+id/pokemonListTypeOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingStart="100dp"
+            android:singleLine="false"
+            android:text="Grass"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:layout_below="@+id/pokemonListName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+
+</LinearLayout>
