@@ -1,4 +1,6 @@
-GUAU: https://github.com/nilopc-learning-android/android-examples
+GUAU:
+- https://github.com/nilopc-learning-android/android-examples
+- http://hannesdorfmann.com/android/evolution-of-the-repository-pattern
 
 # Todo:
 
