@@ -13,6 +13,8 @@ CUSTOM VIEWS:
 
 # Todo:
 
+- Load from web deeplink (how do these even work?!)
+
 ### Retrofit factory
 
 ### Permissions on demand
