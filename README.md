@@ -7,6 +7,9 @@ THIS IS HUGE:
 
 CUSTOM VIEWS: 
 - https://corner.squareup.com/2014/10/advocating-against-android-fragments.html
+- https://developer.android.com/training/material/lists-cards.html
+
+
 
 # Todo:
 
