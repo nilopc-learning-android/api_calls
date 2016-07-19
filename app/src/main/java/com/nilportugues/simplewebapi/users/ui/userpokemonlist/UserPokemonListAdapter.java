@@ -1,7 +1,6 @@
 package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +13,14 @@ import com.nilportugues.simplewebapi.R;
 
 import java.util.ArrayList;
 
-public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
+public class UserPokemonListAdapter extends ArrayAdapter<ListItemPresenter> {
 
-    private ArrayList<PokemonEntry> pokemonList;
+    private ArrayList<ListItemPresenter> pokemonList;
 
     public UserPokemonListAdapter(
             Context context,
             int textViewResourceId,
-            ArrayList<PokemonEntry> PokemonListItemList
+            ArrayList<ListItemPresenter> PokemonListItemList
     ) {
         super(context, textViewResourceId, PokemonListItemList);
         this.pokemonList = new ArrayList<>();
@@ -29,7 +28,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
     }
 
 
-    public void add(PokemonEntry PokemonListItem) {
+    public void add(ListItemPresenter PokemonListItem) {
         Log.v("AddView", PokemonListItem.getPokemonName());
         this.pokemonList.add(PokemonListItem);
     }
@@ -37,7 +36,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        UserPokemonListRowView rowView;
+        ListItemView rowView;
 
         if (convertView == null) {
             LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -45,7 +44,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
             rowView = createRowView(convertView);
             convertView.setTag(rowView);
         } else {
-            rowView = (UserPokemonListRowView) convertView.getTag();
+            rowView = (ListItemView) convertView.getTag();
         }
 
         populateRowView(rowView, this.pokemonList.get(position));
@@ -54,9 +53,8 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
 
     }
 
-    @NonNull
-    private UserPokemonListRowView createRowView(View convertView) {
-        return new UserPokemonListRowView(
+    private ListItemView createRowView(View convertView) {
+        return new ListItemView(
                 (ImageView) convertView.findViewById(R.id.pokemonListArtwork),
                 (TextView) convertView.findViewById(R.id.pokemonListName),
                 (TextView) convertView.findViewById(R.id.pokemonListTypeOne),
@@ -65,7 +63,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
         );
     }
 
-    private void populateRowView(UserPokemonListRowView rowView, PokemonEntry pokemon) {
+    private void populateRowView(ListItemView rowView, ListItemPresenter pokemon) {
 
         int resource = getResourceFromPokemon(pokemon);
 
@@ -77,7 +75,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
         rowView.getNumber().setText(String.format("#%03d", pokemon.getPokemonNumber()));
     }
 
-    private int getResourceFromPokemon(PokemonEntry pokemon) {
+    private int getResourceFromPokemon(ListItemPresenter pokemon) {
         return getContext().getResources().getIdentifier(
             "p" + String.format("%03d", pokemon.getPokemonNumber()),
             "drawable",

@@ -1,13 +1,13 @@
 package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
-public class PokemonEntry
+public class ListItemPresenter
 {
     private Integer PokemonNumber;
     private String PokemonName;
     private String TypeOne;
     private String TypeTwo;
 
-    public PokemonEntry(Integer pokemonNumber, String pokemonName, String typeOne, String typeTwo) {
+    public ListItemPresenter(Integer pokemonNumber, String pokemonName, String typeOne, String typeTwo) {
         PokemonNumber = pokemonNumber;
         PokemonName = pokemonName;
         TypeOne = typeOne;

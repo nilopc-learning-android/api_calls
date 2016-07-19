@@ -4,7 +4,7 @@ package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class UserPokemonListRowView
+public class ListItemView
 {
     private ImageView artwork;
     private TextView name;
@@ -12,7 +12,7 @@ public class UserPokemonListRowView
     private TextView typeTwo;
     private TextView number;
 
-    public UserPokemonListRowView(
+    public ListItemView(
             ImageView artwork,
             TextView name,
             TextView typeOne,
