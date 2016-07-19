@@ -74,15 +74,13 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
         rowView.getTypeOne().setText(pokemon.getTypeOne());
         rowView.getTypeTwo().setText(pokemon.getTypeTwo());
         rowView.getNumber().setText(String.format("#%03d", pokemon.getPokemonNumber()));
-
-        Log.i("NUM", rowView.getNumber().getText().toString());
     }
 
     private int getResourceFromPokemon(PokemonEntry pokemon) {
         return getContext().getResources().getIdentifier(
-                "p" + String.format("%03d", pokemon.getPokemonNumber()),
-                "drawable",
-                getContext().getPackageName()
+            "p" + String.format("%03d", pokemon.getPokemonNumber()),
+            "drawable",
+            getContext().getPackageName()
         );
     }
 

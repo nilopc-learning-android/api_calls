@@ -29,6 +29,9 @@ public class UserPokemonListActivity extends BaseActivity
         pokemonList.add(new PokemonEntry(7, "Squirtle", "Water", ""));
         pokemonList.add(new PokemonEntry(8, "Wartortle", "Water", ""));
         pokemonList.add(new PokemonEntry(9, "Blastoise", "Water", ""));
+        pokemonList.add(new PokemonEntry(10, "Caterpie", "Bug", ""));
+        pokemonList.add(new PokemonEntry(11, "Metapod", "Bug", ""));
+        pokemonList.add(new PokemonEntry(12, "Butterfree", "Bug", "Flying"));
 
         UserPokemonListAdapter adapter = new UserPokemonListAdapter(
                 getApplicationContext(),

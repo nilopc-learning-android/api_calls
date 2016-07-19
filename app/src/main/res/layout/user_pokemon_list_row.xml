@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
 
         <ImageView
             android:id="@+id/pokemonListArtwork"
@@ -18,6 +19,7 @@
             android:maxWidth="98dp"
             android:nestedScrollingEnabled="false"
             android:src="@drawable/p001"
+            android:background="@android:color/transparent"
             android:textAlignment="textStart" />
 
 
@@ -27,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingStart="100dp"
+            android:paddingStart="104dp"
             android:paddingTop="10dp"
             android:singleLine="false"
             android:text="Bulbasaur"
@@ -42,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="104dp"
             android:weightSum="10"
             android:layout_marginTop="40dp"
             android:id="@+id/tableRow">
