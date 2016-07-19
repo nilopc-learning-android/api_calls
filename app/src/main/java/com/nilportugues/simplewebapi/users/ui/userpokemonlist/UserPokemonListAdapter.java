@@ -69,6 +69,7 @@ public class UserPokemonListAdapter extends ArrayAdapter<PokemonEntry> {
 
         int resource = getResourceFromPokemon(pokemon);
 
+
         rowView.getArtwork().setImageResource(resource);
         rowView.getName().setText(pokemon.getPokemonName());
         rowView.getTypeOne().setText(pokemon.getTypeOne());

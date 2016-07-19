@@ -1,7 +1,12 @@
 package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nilportugues.simplewebapi.R;
 import com.nilportugues.simplewebapi.shared.ui.BaseActivity;
@@ -41,11 +46,29 @@ public class UserPokemonListActivity extends BaseActivity
 
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new ItemListListener());
     }
 
     @Override
     protected int getLayoutId() {
         return R.layout.user_pokemon_list;
+    }
+
+    class ItemListListener implements AdapterView.OnItemClickListener
+    {
+
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            TextView textView = (TextView) viewGroup.findViewById(R.id.pokemonListNumber);
+
+            Toast.makeText(
+                    UserPokemonListActivity.this,
+                    "Clicked " + textView.getText().toString(),
+                    Toast.LENGTH_SHORT
+            ).show();
+
+        }
     }
 }
 
