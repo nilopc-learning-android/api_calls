@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/userPokemonNameTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="PokemonName"
+        android:padding="12dp"
+        android:layout_margin="0dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Pokémon you clicked: "
+        android:id="@+id/textView"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/userPokemonImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:nestedScrollingEnabled="false"
+        android:src="@drawable/p001"
+        android:background="@android:color/transparent"
+        android:textAlignment="textStart" />
+</LinearLayout>

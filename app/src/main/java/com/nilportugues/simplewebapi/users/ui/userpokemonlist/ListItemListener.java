@@ -1,12 +1,14 @@
 package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nilportugues.simplewebapi.R;
+import com.nilportugues.simplewebapi.users.ui.userpokemon.UserPokemonActivity;
 
 
 public class ListItemListener implements AdapterView.OnItemClickListener
@@ -19,10 +21,33 @@ public class ListItemListener implements AdapterView.OnItemClickListener
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
         ViewGroup viewGroup = (ViewGroup) view;
-        TextView textView = (TextView) viewGroup.findViewById(R.id.pokemonListNumber);
 
-        Toast.makeText(this.activity, "Clicked " + textView.getText().toString(), Toast.LENGTH_LONG).show();
+        String pokemonNumber = getPokemonNumberFromView(viewGroup);
+        String pokemonName = getPokemonNameFromView(viewGroup);
 
+        loadUserPokemonActivity(pokemonNumber, pokemonName);
+    }
+
+    @NonNull
+    private String getPokemonNumberFromView(ViewGroup view) {
+        TextView textView = (TextView) view.findViewById(R.id.pokemonListNumber);
+        return textView.getText().toString().substring(1);
+    }
+
+    @NonNull
+    private String getPokemonNameFromView(ViewGroup view) {
+        TextView textView = (TextView) view.findViewById(R.id.pokemonListName);
+        return textView.getText().toString();
+    }
+
+    private void loadUserPokemonActivity(String pokemonNumber, String pokemonName) {
+        Intent intent = new Intent(activity, UserPokemonActivity.class);
+
+        intent.putExtra(UserPokemonActivity.POKEMON_NUMBER, pokemonNumber);
+        intent.putExtra(UserPokemonActivity.POKEMON_NAME, pokemonName);
+
+        activity.startActivityForResult(intent, UserPokemonActivity.REQUEST_CODE);
     }
 }

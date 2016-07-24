@@ -30,6 +30,7 @@
         <activity android:name=".users.ui.usertabscustomview.TabsWithCustomViewsActivity" />
         <activity android:name=".users.ui.usertabsscrollable.TabsScrollableActivity" />
         <activity android:name=".users.ui.userpokemonlist.UserPokemonListActivity" />
+        <activity android:name=".users.ui.userpokemon.UserPokemonActivity" />
 
     </application>
 
