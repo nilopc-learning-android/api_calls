@@ -1,3 +1,8 @@
+App as view tutorial... this is what I'm doing 
+
+- https://github.com/xuyisheng/AndroidHeroes
+
+
 GUAU:
 - https://github.com/nilopc-learning-android/android-examples
 - http://hannesdorfmann.com/android/evolution-of-the-repository-pattern
@@ -7,8 +12,13 @@ THIS IS HUGE:
 
 CUSTOM VIEWS: 
 - https://corner.squareup.com/2014/10/advocating-against-android-fragments.html
+- https://developer.android.com/training/material/lists-cards.html
+ 
+
 
 # Todo:
+
+- Load from web deeplink (how do these even work?!)
 
 ### Retrofit factory
 
