@@ -102,6 +102,17 @@
             android:alpha="0.4"
             android:textStyle="italic"
             android:paddingBottom="0dp" />
+
+        <TextView
+            android:id="@+id/pokemonApiNumber"
+            android:visibility="invisible"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:textSize="1px"
+            android:layout_marginTop="-100sp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="001"
+            />
     </RelativeLayout>
 
 

@@ -2,32 +2,32 @@ package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
 public class ListItemPresenter
 {
-    private Integer PokemonNumber;
-    private String PokemonName;
-    private String TypeOne;
-    private String TypeTwo;
+    private Integer pokemonNumber;
+    private String pokemonName;
+    private String typeOne;
+    private String typeTwo;
 
     public ListItemPresenter(Integer pokemonNumber, String pokemonName, String typeOne, String typeTwo) {
-        PokemonNumber = pokemonNumber;
-        PokemonName = pokemonName;
-        TypeOne = typeOne;
-        TypeTwo = typeTwo;
+        this.pokemonNumber = pokemonNumber;
+        this.pokemonName = pokemonName;
+        this.typeOne = typeOne;
+        this.typeTwo = typeTwo;
     }
 
-    public Integer getPokemonNumber() {
-        return PokemonNumber;
+    public String getPokemonNumber() {
+        return String.format("%03d", pokemonNumber);
     }
 
     public String getPokemonName() {
-        return PokemonName;
+        return pokemonName;
     }
 
     public String getTypeOne() {
-        return TypeOne;
+        return typeOne;
     }
 
     public String getTypeTwo() {
-        return TypeTwo;
+        return typeTwo;
     }
 }
 

@@ -10,20 +10,23 @@ public class ListItemView
     private TextView name;
     private TextView typeOne;
     private TextView typeTwo;
-    private TextView number;
+    private TextView listNumber;
+    private TextView apiNumber;
 
     public ListItemView(
             ImageView artwork,
             TextView name,
             TextView typeOne,
             TextView typeTwo,
-            TextView number
+            TextView listNumber,
+            TextView apiNumber
     ) {
         this.artwork = artwork;
         this.name = name;
         this.typeOne = typeOne;
         this.typeTwo = typeTwo;
-        this.number = number;
+        this.listNumber = listNumber;
+        this.apiNumber = apiNumber;
     }
 
     public ImageView getArtwork() {
@@ -33,8 +36,12 @@ public class ListItemView
     public TextView getName() {
         return name;
     }
-    public TextView getNumber() {
-        return number;
+    public TextView getListNumber() {
+        return listNumber;
+    }
+
+    public TextView getInternalNumber() {
+        return apiNumber;
     }
 
     public TextView getTypeOne() {

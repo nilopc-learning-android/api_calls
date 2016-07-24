@@ -59,7 +59,8 @@ public class UserPokemonListAdapter extends ArrayAdapter<ListItemPresenter> {
                 (TextView) convertView.findViewById(R.id.pokemonListName),
                 (TextView) convertView.findViewById(R.id.pokemonListTypeOne),
                 (TextView) convertView.findViewById(R.id.pokemonListTypeTwo),
-                (TextView) convertView.findViewById(R.id.pokemonListNumber)
+                (TextView) convertView.findViewById(R.id.pokemonListNumber),
+                (TextView) convertView.findViewById(R.id.pokemonApiNumber)
         );
     }
 
@@ -67,17 +68,17 @@ public class UserPokemonListAdapter extends ArrayAdapter<ListItemPresenter> {
 
         int resource = getResourceFromPokemon(pokemon);
 
-
         rowView.getArtwork().setImageResource(resource);
         rowView.getName().setText(pokemon.getPokemonName());
         rowView.getTypeOne().setText(pokemon.getTypeOne());
         rowView.getTypeTwo().setText(pokemon.getTypeTwo());
-        rowView.getNumber().setText(String.format("#%03d", pokemon.getPokemonNumber()));
+        rowView.getListNumber().setText("#" + pokemon.getPokemonNumber());
+        rowView.getInternalNumber().setText(pokemon.getPokemonNumber());
     }
 
     private int getResourceFromPokemon(ListItemPresenter pokemon) {
         return getContext().getResources().getIdentifier(
-            "p" + String.format("%03d", pokemon.getPokemonNumber()),
+            "p" + pokemon.getPokemonNumber(),
             "drawable",
             getContext().getPackageName()
         );

@@ -1,7 +1,6 @@
 package com.nilportugues.simplewebapi.users.ui.userpokemonlist;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -30,16 +29,21 @@ public class ListItemListener implements AdapterView.OnItemClickListener
         loadUserPokemonActivity(pokemonNumber, pokemonName);
     }
 
-    @NonNull
     private String getPokemonNumberFromView(ViewGroup view) {
-        TextView textView = (TextView) view.findViewById(R.id.pokemonListNumber);
-        return textView.getText().toString().substring(1);
+        String pokemonNumber;
+
+        TextView textView = (TextView) view.findViewById(R.id.pokemonApiNumber);
+        pokemonNumber = textView.getText().toString();
+
+        return pokemonNumber;
     }
 
-    @NonNull
     private String getPokemonNameFromView(ViewGroup view) {
+        String pokemonName;
         TextView textView = (TextView) view.findViewById(R.id.pokemonListName);
-        return textView.getText().toString();
+        pokemonName = textView.getText().toString();
+
+        return pokemonName;
     }
 
     private void loadUserPokemonActivity(String pokemonNumber, String pokemonName) {
