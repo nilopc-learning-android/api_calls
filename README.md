@@ -1,11 +1,10 @@
-- https://github.com/nilopc-learning-android/Filmy
-
 App as view tutorial... this is what I'm doing 
 
 - https://github.com/xuyisheng/AndroidHeroes
 
 
 GUAU:
+- https://github.com/nilopc-learning-android/Filmy
 - https://github.com/nilopc-learning-android/android-examples
 - http://hannesdorfmann.com/android/evolution-of-the-repository-pattern
 
