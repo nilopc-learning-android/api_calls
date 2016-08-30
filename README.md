@@ -1,3 +1,5 @@
+New RXJava: https://github.com/amitshekhariitbhu/RxJava2-Android-Samples
+
 App as view tutorial... this is what I'm doing 
 
 - https://github.com/xuyisheng/AndroidHeroes
