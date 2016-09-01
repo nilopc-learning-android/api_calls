@@ -4,6 +4,8 @@ App as view tutorial... this is what I'm doing
 
 - https://github.com/xuyisheng/AndroidHeroes
 
+## Do permissions this way?
+- https://github.com/hotchemi/PermissionsDispatcher
 
 GUAU:
 - https://github.com/nilopc-learning-android/Filmy
