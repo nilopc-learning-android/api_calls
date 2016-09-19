@@ -1,3 +1,6 @@
+
+- USING REALM instead of SQLITE. Step by step: https://realm.io/news/360andev-chris-guzman-android-libraries-beginner/ (Slide 61, minuto 25
+
 New RXJava: https://github.com/amitshekhariitbhu/RxJava2-Android-Samples
 
 App as view tutorial... this is what I'm doing 
