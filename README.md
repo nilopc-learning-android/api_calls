@@ -1,3 +1,7 @@
+EXTREMELY IMPORTANT: 
+- This happens when the app gets killed by the user. We want to keep a service running it to send push notifications even if they killed the app.
+- http://stackoverflow.com/questions/18219657/how-do-i-keep-a-service-alive-indefinitely
+
 
 - USING REALM instead of SQLITE. Step by step: https://realm.io/news/360andev-chris-guzman-android-libraries-beginner/ (Slide 61, minuto 25
 
